@@ -1,0 +1,46 @@
+﻿    /* ── CASE STUDIES PAGE — RESPONSIVE ── */
+
+    /* Base section padding */
+    main > section:first-child {
+      padding: 280px 5% 100px;
+      min-height: 100vh;
+    }
+
+    /* Tablet (≤ 960px) */
+    @media (max-width: 960px) {
+      main > section:first-child {
+        padding: 220px 5% 80px;
+      }
+
+      .sec-heading {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+      }
+    }
+
+    /* Mobile (≤ 640px) */
+    @media (max-width: 640px) {
+      main > section:first-child {
+        padding: 170px 5% 60px;
+      }
+
+      .sec-heading {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+      }
+
+      .sec-sub {
+        font-size: 0.9rem;
+      }
+
+      /* Stack button row vertically on small screens */
+      main > section:first-child > div > div > div[style*="flex"] {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Extra small (≤ 400px) */
+    @media (max-width: 400px) {
+      main > section:first-child {
+        padding: 155px 4% 50px;
+      }
+    }
