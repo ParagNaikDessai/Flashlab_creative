@@ -583,3 +583,25 @@
     height: 200px !important;
   }
 }
+
+/* === CONTACT BAND MOBILE FIX === */
+@media (max-width: 640px) {
+  .contact-band {
+    padding: 0 20px 40px !important;
+  }
+  .contact-band h2 {
+    font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+    word-break: break-word !important;
+    line-height: 1.1 !important;
+    margin-bottom: 16px !important;
+  }
+  .contact-band p {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+    padding: 0 10px !important;
+  }
+  .contact-band .btn-dark {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}

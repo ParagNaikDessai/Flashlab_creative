@@ -1567,3 +1567,41 @@ html, body {
     padding-bottom: 20px !important;
   }
 }
+
+/* === CONTACT BAND DARK THEME FIX === */
+[data-theme="dark"] .contact-band h2 {
+  color: var(--text-strong) !important;
+}
+[data-theme="dark"] .contact-band p {
+  color: var(--muted) !important;
+}
+[data-theme="dark"] .contact-band .btn-dark {
+  background: var(--text-strong) !important;
+  color: #0a0a0f !important;
+}
+[data-theme="dark"] .contact-band .btn-dark:hover {
+  background: var(--accent) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(168, 232, 50, 0.3) !important;
+}
+/* === CONTACT BAND MOBILE FIX (GLOBAL) === */
+@media (max-width: 640px) {
+  .contact-band {
+    padding: 0 20px 40px !important;
+  }
+  .contact-band h2 {
+    font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+    word-break: break-word !important;
+    line-height: 1.1 !important;
+    margin-bottom: 16px !important;
+  }
+  .contact-band p {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+    padding: 0 10px !important;
+  }
+  .contact-band .btn-dark {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
