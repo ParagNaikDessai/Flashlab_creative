@@ -265,6 +265,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link =>
         'career-web-developer'        : { top: 'career.html', child: 'career-web-developer.html' },
         'career-animation-designer'   : { top: 'career.html', child: 'career-animation-designer.html' },
         'career-app-developer'        : { top: 'career.html', child: 'career-app-developer.html' },
+
+        'career-join-fulltime'        : { top: 'career.html', child: 'join-fulltime.html' },
+        'career-internship'           : { top: 'career.html', child: 'internship.html' },
+        'career-hr-policy'            : { top: 'career.html', child: 'hr-policy.html' },
+        'career-freelance'            : { top: 'career.html', child: 'freelance.html' },
+        'career-influencer-signup'    : { top: 'career.html', child: 'influencer-signup.html' },
     };
 
     const page  = document.body.getAttribute('data-page');
