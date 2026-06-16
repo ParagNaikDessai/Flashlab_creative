@@ -284,6 +284,14 @@ li, blockquote, input, textarea { cursor: text; }
   gap: 4px 12px;
 }
 
+.nav-links > li:nth-child(7) > ul,
+.nav-links > li:has(> a[href*="career"]) > ul {
+  min-width: 260px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+}
+
 .nav-links ul::before {
   content:'';
   position:  absolute;
