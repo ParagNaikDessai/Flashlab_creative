@@ -1,4 +1,4 @@
-﻿    /* =====================================================
+    /* =====================================================
    HERO — HAPPY TO ASSIST
 ===================================================== */
     .hero-section {
@@ -168,6 +168,11 @@
       flex-shrink: 0;
     }
 
+    .info-card-text {
+      min-width: 0;
+      flex: 1;
+    }
+
     .info-card-text h5 {
       font-size: 0.8rem;
       font-weight: 700;
@@ -180,6 +185,8 @@
       font-size: 0.78rem;
       color: var(--muted);
       line-height: 1.5;
+      word-wrap: break-word;
+      word-break: break-all;
     }
 
     .info-card-text a {
@@ -372,6 +379,11 @@
       margin-top: 2px;
     }
 
+    .ci-content {
+      min-width: 0;
+      flex: 1;
+    }
+
     .ci-content h5 {
       font-size: 0.72rem;
       font-weight: 700;
@@ -387,6 +399,8 @@
       font-size: 0.92rem;
       line-height: 1.6;
       transition: color 0.3s;
+      word-wrap: break-word;
+      word-break: break-all;
     }
 
     .ci-content a:hover {
