@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
@@ -193,11 +193,10 @@
         <p class="sec-sub">Across Goa, India and beyond &mdash; a growing family of brands that chose Flashlab Creative.</p>
       </div>
       <!-- ── NEW LOGOS FROM DOCX ── -->
-      <div class="logos-free-grid reveal">
+      <div class="logos-free-grid reveal collapsed" id="logosGrid">
 
         <!-- ── EXISTING LOGOS (from WP CDN) ── -->
-        <div class="logo-free-item"><img
-            src="images/logos/caliber.png" alt="Caliber Cafe"
+        <div class="logo-free-item white-to-dark"><img src="images/logos/caliber.png" alt="Caliber Cafe"
             loading="lazy"
             onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Caliber</span>'">
         </div>
@@ -231,13 +230,11 @@
             alt="Cali" loading="lazy"
             onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Cali</span>'">
         </div>
-        <div class="logo-free-item"><img
-            src="images/logos/Holi-Dhun.png" alt="Holi Dhun"
+        <div class="logo-free-item white-to-dark"><img src="images/logos/Holi-Dhun.png" alt="Holi Dhun"
             loading="lazy"
             onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Holi Dhun</span>'">
         </div>
-        <div class="logo-free-item"><img
-            src="images/logos/Akshay green.png" alt="Akshay"
+        <div class="logo-free-item white-to-dark"><img src="images/logos/Akshay green.png" alt="Akshay"
             loading="lazy"
             onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Akshay</span>'">
         </div>
@@ -478,6 +475,9 @@
             onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Darkside Studios</span>'">
         </div>
 
+      </div>
+      <div class="load-more-wrap" id="loadMoreLogosWrap">
+        <button class="btn-ghost" id="loadMoreLogosBtn">Load More</button>
       </div>
     </div>
   </section>
@@ -774,7 +774,7 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="index.html">
-            <img src="images/logos/flask-logo.png" alt="Flashlab Creative"
+            <img src="images/logos/flashlab-logo-dark.png" alt="Flashlab Creative"
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
@@ -787,7 +787,7 @@
           <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Navigation</h4>
         <ul class="footer-list">
           <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
@@ -800,7 +800,7 @@
           <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
         </ul>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Services</h4>
         <ul class="footer-list">
           <li><a href="html/services/outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
@@ -812,7 +812,7 @@
           <li><a href="html/services/ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
         </ul>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
           <li><a href="career.html#open-positions" data-open-role="intern"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
@@ -824,7 +824,7 @@
           <li><a href="career.html#open-positions" data-open-role="app-developer"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Service Links</h4>
         <ul class="footer-list">
           <li><a href="#"><i class="ri-arrow-right-s-line"></i>Team Blogs</a></li>
@@ -858,6 +858,19 @@
 
   <script src="js/main.js"></script>
   <script src="js/pages/clients.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('loadMoreLogosBtn');
+      const grid = document.getElementById('logosGrid');
+      const wrap = document.getElementById('loadMoreLogosWrap');
+      if(btn && grid) {
+        btn.addEventListener('click', function() {
+          grid.classList.remove('collapsed');
+          wrap.style.display = 'none';
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

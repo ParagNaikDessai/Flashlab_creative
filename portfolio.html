@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
@@ -17,6 +17,76 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages/portfolio.css">
 
+    <style>
+  /* === AGGRESSIVE MOBILE COMPRESSION === */
+  @media (max-width: 1024px) {
+    /* 1. Footer */
+    .footer-grid { display: flex !important; flex-direction: column !important; gap: 8px !important; padding-top: 16px !important; }
+    .hide-on-mobile { display: none !important; }
+    .footer-brand { display: flex !important; flex-direction: column !important; gap: 12px !important; padding-bottom: 0 !important; }
+    .footer-brand p { margin: 0 !important; }
+    .footer-brand { padding-bottom: 0 !important; margin-bottom: 0 !important; }
+    /* footer flex applied */
+    .footer-list a { min-height: 24px !important; font-size: 0.75rem !important; }
+    .footer-head { font-size: 0.8rem !important; margin-bottom: 6px !important; }
+    
+    /* 2. Service Cards */
+    .svc-card { height: 120px !important; min-height: 120px !important; border-radius: 8px !important; }
+    .svc-card h3 { font-size: 0.95rem !important; margin-bottom: 2px !important; }
+    .svc-content { padding: 12px !important; }
+    
+    /* 3. Flip Cards (Ultra Compact) */
+    .flip-cards-grid { gap: 10px !important; padding: 0 4px !important; }
+    .flip-card { height: auto !important; border-radius: 8px !important; }
+    .flip-card-inner { border-radius: 8px !important; }
+    .flip-face-img { height: 60px !important; }
+    .flip-face-img .face-overlay { padding: 6px 10px !important; }
+    .flip-face-img .face-num { font-size: 0.6rem !important; margin-bottom: 2px !important; }
+    .flip-face-img .face-title { font-size: 0.95rem !important; }
+    .flip-front-icon { font-size: 1.4rem !important; margin-bottom: 2px !important; }
+    .flip-face-text { padding: 10px 10px 12px !important; border-radius: 0 0 8px 8px !important; }
+    .flip-face-text p { font-size: 0.75rem !important; margin-bottom: 8px !important; line-height: 1.3 !important; }
+    .flip-face-text .face-link { padding: 6px 10px !important; font-size: 0.75rem !important; min-height: 32px !important; margin: 0 !important; }
+    
+    /* 4. Founder Cards */
+    .founder-card { padding: 14px !important; gap: 12px !important; flex-direction: column !important; border-radius: 8px !important; }
+    .founder-photo { height: auto !important; aspect-ratio: 1/1 !important; border-radius: 6px !important; }
+    .founder-card h4 { font-size: 1.1rem !important; margin-bottom: 2px !important; }
+    .founder-card p { font-size: 0.8rem !important; margin-bottom: 4px !important; line-height: 1.4 !important; }
+    .founder-socials { display: flex !important; flex-wrap: wrap !important; gap: 10px !important; justify-content: center !important; margin-top: 8px !important; }
+    .founder-socials a { width: 36px !important; height: 36px !important; min-height: 36px !important; font-size: 1rem !important; }
+    
+    /* 5. Founder Quotes */
+    .founder-quote { padding: 12px !important; flex: 0 0 94% !important; border-radius: 8px !important; }
+    .founder-quote blockquote { font-size: 0.75rem !important; line-height: 1.35 !important; }
+    .fq-author { padding-top: 8px !important; gap: 8px !important; }
+    .fq-avatar { width: 32px !important; height: 32px !important; }
+    .fq-author strong { font-size: 0.8rem !important; }
+    .fq-author span { font-size: 0.65rem !important; }
+    
+    /* General Spacing */
+    section { padding: 30px 0 !important; }
+    .sec-heading { font-size: 1.5rem !important; margin-bottom: 12px !important; }
+    .sec-sub { font-size: 0.85rem !important; margin-bottom: 20px !important; }
+    /* 6. Clients Section */
+    .clients-section { padding-top: 40px !important; padding-bottom: 40px !important; }
+    .cl-item { width: 140px !important; height: 90px !important; }
+    .cl-item img { max-height: 60px !important; max-width: 120px !important; opacity: 1 !important; }
+    /* 7. Testimonials */
+    .testi-card { padding: 14px 12px !important; border-radius: 10px !important; min-height: auto !important; }
+    .testi-stars { font-size: 0.8rem !important; margin-bottom: 6px !important; }
+    .testi-card p { font-size: 0.75rem !important; line-height: 1.35 !important; margin-bottom: 12px !important; }
+    .testi-author { margin-top: 0 !important; padding-top: 10px !important; gap: 10px !important; }
+    .testi-initial { width: 32px !important; height: 32px !important; font-size: 0.9rem !important; }
+    .testi-name { font-size: 0.85rem !important; }
+    .testi-role { font-size: 0.65rem !important; }
+    /* 8. About Section */
+    .sec-body { font-size: 0.82rem !important; line-height: 1.5 !important; margin-bottom: 14px !important; }
+    .about-list { gap: 8px !important; margin: 12px 0 16px !important; }
+    .about-list li { font-size: 0.8rem !important; gap: 8px !important; }
+    .sec-heading { font-size: clamp(2rem, 8vw, 2.5rem) !important; margin-bottom: 12px !important; line-height: 1.1 !important; }
+  }
+  </style>
 </head>
 
 <body data-page="portfolio">
@@ -200,18 +270,18 @@
           <div class="work-card">
             <div class="work-img">
               <div class="work-img-inner bg-a"><i class="img-icon ri-building-4-line"></i></div>
-              <span class="year-marker">2024 · Featured</span>
+              <span class="year-marker">2024 � Featured</span>
               <div class="work-overlay">
                 <span class="overlay-tag"><i class="ri-award-line"></i> Featured Project</span>
-                <div class="overlay-title">360° Rebrand &mdash; Coastal Hospitality Group</div>
+                <div class="overlay-title">360� Rebrand &mdash; Coastal Hospitality Group</div>
                 <span class="overlay-cta">View Project <i class="ri-arrow-right-line"></i></span>
               </div>
               <div class="work-badge"><i class="ri-arrow-right-up-line"></i></div>
             </div>
             <div class="work-body">
-              <div class="work-year">2024 · Featured</div>
-              <div class="work-title">360° Brand Relaunch &mdash; Coastal Hospitality Group</div>
-              <div class="work-desc">Full rebrand covering identity, digital strategy, social media, and performance ads &mdash; resulting in 3× revenue growth in 12 months.</div>
+              <div class="work-year">2024 � Featured</div>
+              <div class="work-title">360� Brand Relaunch &mdash; Coastal Hospitality Group</div>
+              <div class="work-desc">Full rebrand covering identity, digital strategy, social media, and performance ads &mdash; resulting in 3� revenue growth in 12 months.</div>
               <div class="work-tags"><span class="wtag">Branding</span><span class="wtag">Digital</span><span class="wtag">Social</span></div>
             </div>
           </div>
@@ -281,7 +351,7 @@
           <div class="work-card">
             <div class="work-img">
               <div class="work-img-inner bg-e"><i class="img-icon ri-smartphone-line"></i></div>
-              <span class="year-marker">2022 · Featured</span>
+              <span class="year-marker">2022 � Featured</span>
               <div class="work-overlay">
                 <span class="overlay-tag"><i class="ri-award-line"></i> Featured</span>
                 <div class="overlay-title">Mobile App Launch &mdash; FinTech Startup</div>
@@ -290,7 +360,7 @@
               <div class="work-badge"><i class="ri-arrow-right-up-line"></i></div>
             </div>
             <div class="work-body">
-              <div class="work-year">2022 · Featured</div>
+              <div class="work-year">2022 � Featured</div>
               <div class="work-title">Mobile App Campaign &mdash; FinTech Startup</div>
               <div class="work-desc">App UI/UX design, launch video, social rollout, and 60-day growth strategy achieving 50K+ downloads.</div>
               <div class="work-tags"><span class="wtag">App Dev</span><span class="wtag">Social</span><span class="wtag">Video</span></div>
@@ -400,7 +470,7 @@
               <div class="founder-name-sm">Ankith<br>Kedar</div>
               <div class="founder-badge-sm"><i class="ri-award-line"></i> Co-Founder &amp; Creative Director</div>
             </div>
-            <div class="founder-role-sm">Founder · Creative Director · Brand Strategist</div>
+            <div class="founder-role-sm">Founder � Creative Director � Brand Strategist</div>
             <p class="founder-bio-sm">With a background rooted in design and brand strategy, Ankith spent 2013&ndash;2016 building his portfolio through agency stints and freelance projects across Goa and beyond. These formative years built the bold, results-first philosophy that defines every Flashlab project to this day.</p>
             <div class="founder-meta-row">
               <div class="founder-meta-item"><i class="ri-calendar-check-line"></i> Active since 2013</div>
@@ -411,14 +481,14 @@
           </div>
         </div>
 
-        <div class="founder-works-label sr"><span>Selected Early Works · 2013&ndash;2016</span></div>
+        <div class="founder-works-label sr"><span>Selected Early Works � 2013&ndash;2016</span></div>
         <div class="founder-grid sr">
           <div class="f-card">
             <div class="f-img bg-b"><i class="ri-cup-line"></i></div>
             <div class="f-body">
               <div class="f-year">2016</div>
               <div class="f-title">Cafe Brand Identity &mdash; North Goa</div>
-              <div class="f-cat">Branding · Print</div>
+              <div class="f-cat">Branding � Print</div>
             </div>
           </div>
           <div class="f-card">
@@ -426,7 +496,7 @@
             <div class="f-body">
               <div class="f-year">2015</div>
               <div class="f-title">Event Collateral &mdash; Sunburn Pre-Party</div>
-              <div class="f-cat">Print · Event Design</div>
+              <div class="f-cat">Print � Event Design</div>
             </div>
           </div>
           <div class="f-card">
@@ -442,7 +512,7 @@
             <div class="f-body">
               <div class="f-year">2013</div>
               <div class="f-title">Visual Identity &mdash; Local Retailer</div>
-              <div class="f-cat">Branding · Signage</div>
+              <div class="f-cat">Branding � Signage</div>
             </div>
           </div>
         </div>
@@ -469,25 +539,25 @@
               <div class="founder-name-sm">Anuraj<br>Kedar</div>
               <div class="founder-badge-sm"><i class="ri-code-s-slash-line"></i> Co-Founder &amp; Tech Lead</div>
             </div>
-            <div class="founder-role-sm">Co-Founder · Digital Strategist · Dev Lead</div>
+            <div class="founder-role-sm">Co-Founder � Digital Strategist � Dev Lead</div>
             <p class="founder-bio-sm">Anuraj blends technical depth with a marketer's instinct. His early projects spanned web development, SEO strategy, and digital advertising &mdash; forging the rare skill set that makes Flashlab unique as both a creative and a performance agency.</p>
             <div class="founder-meta-row">
               <div class="founder-meta-item"><i class="ri-calendar-check-line"></i> Active since 2014</div>
               <div class="founder-meta-item"><i class="ri-map-pin-2-line"></i> Margao, Goa</div>
               <div class="founder-meta-item"><i class="ri-code-line"></i> Full-stack &amp; Growth</div>
-              <div class="founder-meta-item"><i class="ri-bar-chart-2-line"></i> SEO · Ads · Analytics</div>
+              <div class="founder-meta-item"><i class="ri-bar-chart-2-line"></i> SEO � Ads � Analytics</div>
             </div>
           </div>
         </div>
 
-        <div class="founder-works-label sr"><span>Selected Early Works · 2014&ndash;2016</span></div>
+        <div class="founder-works-label sr"><span>Selected Early Works � 2014&ndash;2016</span></div>
         <div class="founder-grid sr">
           <div class="f-card">
             <div class="f-img bg-f"><i class="ri-bar-chart-2-line"></i></div>
             <div class="f-body">
               <div class="f-year">2016</div>
               <div class="f-title">SEO Strategy &mdash; Hospitality Client</div>
-              <div class="f-cat">SEO · Analytics</div>
+              <div class="f-cat">SEO � Analytics</div>
             </div>
           </div>
           <div class="f-card">
@@ -495,7 +565,7 @@
             <div class="f-body">
               <div class="f-year">2015</div>
               <div class="f-title">Mobile Web App &mdash; Ticketing System</div>
-              <div class="f-cat">Web Dev · UX</div>
+              <div class="f-cat">Web Dev � UX</div>
             </div>
           </div>
           <div class="f-card">
@@ -503,7 +573,7 @@
             <div class="f-body">
               <div class="f-year">2015</div>
               <div class="f-title">Google Ads Campaign &mdash; Retail Brand</div>
-              <div class="f-cat">Digital Ads · SEM</div>
+              <div class="f-cat">Digital Ads � SEM</div>
             </div>
           </div>
           <div class="f-card">
@@ -537,11 +607,11 @@
           </div>
           <div class="proof-divider"></div>
           <div class="li-post">
-            <div class="li-post-text">"Proud to share our latest 360° campaign for a hospitality brand in Goa. From concept to billboards &mdash; 8 weeks, 4 cups of chai per day ? #flashlabcreative"</div>
+            <div class="li-post-text">"Proud to share our latest 360� campaign for a hospitality brand in Goa. From concept to billboards &mdash; 8 weeks, 4 cups of chai per day ? #flashlabcreative"</div>
             <div class="li-post-meta"><span><i class="ri-thumb-up-fill" style="color:#0a88cc;"></i> 312 reactions</span><span><i class="ri-chat-3-line"></i> 47 comments</span></div>
           </div>
           <div class="li-post">
-            <div class="li-post-text">"We crossed 200 projects this year. Grateful to every client who trusted us with their brand. Here's to 200 more 🙌 #200projects"</div>
+            <div class="li-post-text">"We crossed 200 projects this year. Grateful to every client who trusted us with their brand. Here's to 200 more ?? #200projects"</div>
             <div class="li-post-meta"><span><i class="ri-thumb-up-fill" style="color:#0a88cc;"></i> 589 reactions</span><span><i class="ri-chat-3-line"></i> 91 comments</span></div>
           </div>
           <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener" class="proof-cta">Follow on LinkedIn <i class="ri-arrow-right-line"></i></a>
@@ -571,7 +641,7 @@
             <div class="proof-icon-wrap go"><i class="ri-google-fill"></i></div>
             <div>
               <div class="proof-platform">Google Reviews</div>
-              <div class="proof-count">4.9 <i class="ri-star-fill" style="color:inherit;"></i> · 60+ Reviews</div>
+              <div class="proof-count">4.9 <i class="ri-star-fill" style="color:inherit;"></i> � 60+ Reviews</div>
             </div>
           </div>
           <div class="proof-divider"></div>
@@ -615,7 +685,7 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="index.html">
-            <img src="images/logos/flask-logo.png" alt="Flashlab Creative"
+            <img src="images/logos/flashlab-logo-dark.png" alt="Flashlab Creative"
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
@@ -628,7 +698,7 @@
           <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Navigation</h4>
         <ul class="footer-list">
           <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
@@ -641,7 +711,7 @@
           <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
         </ul>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Services</h4>
         <ul class="footer-list">
           <li><a href="html/services/outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
@@ -653,7 +723,7 @@
           <li><a href="html/services/ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
         </ul>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
           <li><a href="career.html#open-positions" data-open-role="intern"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
@@ -665,7 +735,7 @@
           <li><a href="career.html#open-positions" data-open-role="app-developer"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <h4 class="footer-head">Service Links</h4>
         <ul class="footer-list">
           <li><a href="#"><i class="ri-arrow-right-s-line"></i>Team Blogs</a></li>
@@ -700,3 +770,10 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+

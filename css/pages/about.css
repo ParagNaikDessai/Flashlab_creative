@@ -1287,3 +1287,37 @@
   .page-hero-inner { padding: 0 5% 38px; }
   .hero-meta { gap: 16px 8px; }
 }
+/* --- MOBILE FIX 10 --- */
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: 160px !important;
+    padding-bottom: 50px !important;
+  }
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .timeline-item {
+    flex-direction: column !important;
+    gap: 12px;
+  }
+  .timeline-year {
+    font-size: 1.2rem !important;
+  }
+  .values-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding-top: 140px !important;
+  }
+  .values-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .timeline-section {
+    padding: 40px 0 !important;
+  }
+}

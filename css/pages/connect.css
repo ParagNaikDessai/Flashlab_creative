@@ -977,3 +977,59 @@
 }
 
 /* Bot is on the left, back-to-top stays bottom-right — no override needed */
+
+/* --- MOBILE FIX 12 --- */
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 155px !important;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 14px 16px !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+  }
+  .btn-submit {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    font-size: 0.9rem !important;
+    justify-content: center !important;
+  }
+  .form-title {
+    font-size: 1.4rem !important;
+  }
+  .contact-info-item {
+    flex-direction: column !important;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-section {
+    padding-top: 140px !important;
+  }
+  .contact-form-wrap {
+    padding: 20px 14px !important;
+  }
+}
+
+/* --- EXTRA MOBILE POLISH --- */
+@media (max-width: 640px) {
+  .hero-inner, .contact-grid {
+    padding: 0 10px;
+  }
+  .info-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+  .hero-socials {
+    flex-wrap: wrap;
+  }
+  .contact-details-head h2 {
+    font-size: 2.2rem !important;
+  }
+}

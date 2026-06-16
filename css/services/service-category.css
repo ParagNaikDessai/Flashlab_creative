@@ -542,3 +542,44 @@
     padding-top: 155px;
   }
 }
+
+/* --- MOBILE FIX 16 --- */
+@media (max-width: 768px) {
+  .service-page-hero {
+    padding-top: 170px !important;
+    padding-bottom: 50px !important;
+    min-height: auto !important;
+  }
+  .service-page-hero h1 {
+    font-size: clamp(2rem, 8.5vw, 3.5rem) !important;
+    letter-spacing: 1px;
+  }
+  .overview-img-main {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-page-hero {
+    padding-top: 150px !important;
+  }
+  .overview-img-main {
+    height: 240px !important;
+    border-radius: 10px !important;
+  }
+  .design-card {
+    padding: 28px 20px !important;
+  }
+  .design-card h3 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-page-hero {
+    padding-top: 135px !important;
+  }
+  .overview-img-main {
+    height: 200px !important;
+  }
+}

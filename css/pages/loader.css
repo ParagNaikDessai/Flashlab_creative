@@ -248,10 +248,10 @@ svg.flask {
 
 /* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 480px) {
-  .flask-stage   { width: 240px; height: 290px; }
-  .brand h1      { font-size: 2.1rem; }
-  .brand-logo    { height: 46px; }
-  .progress-wrap { width: 210px; }
+  .flask-stage   { width: 150px; height: 180px; margin-bottom: 24px; }
+  .brand h1      { font-size: 1.6rem; }
+  .brand-logo    { height: 32px; margin-bottom: -4px; }
+  .progress-wrap { width: 180px; }
   .orbit.o1, .orbit.o2 { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -259,3 +259,5 @@ svg.flask {
     animation: none;
   }
 }
+
+

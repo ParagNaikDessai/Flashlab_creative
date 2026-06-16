@@ -60,7 +60,7 @@
       var dt = (now - last) / 1000;
       last = now;
       // fast early, slow approach to 100
-      var speed = p < 80 ? 42 : 16;
+      var speed = p < 80 ? 90 : 40;
       p = Math.min(100, p + speed * dt);
       render(p);
       if (p < 100) {
@@ -70,13 +70,14 @@
           loader.classList.add('done');
           document.documentElement.style.overflow = '';
           sessionStorage.setItem('flLoaderShown', '1');
-        }, 650);
+        }, 300);
       }
     }
     render(0);
     requestAnimationFrame(tick);
   }
 
-  window.addEventListener('load', function () { setTimeout(run, 150); });
-  if (document.readyState === 'complete') setTimeout(run, 150);
+  window.addEventListener('load', function () { setTimeout(run, 50); });
+  if (document.readyState === 'complete') setTimeout(run, 50);
 })();
+

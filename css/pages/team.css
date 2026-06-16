@@ -24,7 +24,7 @@
         .team-hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
             z-index: 1;
         }
 
@@ -63,13 +63,7 @@
             display: block;
         }
 
-        .hero-left h1 {
-            font-family: var(--font-head);
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            line-height: 1;
-            color: #fff;
-            margin-bottom: 16px;
-            white-space: nowrap;
+        .hero-left h1 { text-shadow: 0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6); font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; color: #fff; margin-bottom: 16px; white-space: normal;
             text-align: center;
         }
 
@@ -84,7 +78,7 @@
         }
 
         /* Subtext: centered, single line */
-        .hero-left p {
+        .hero-left p { text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.6);
             color: rgba(255, 255, 255, .85);
             font-size: .92rem;
             line-height: 1.6;
@@ -564,7 +558,7 @@
                 height: 300px;
             }
 
-            .hero-left p {
+            .hero-left p { text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.6);
                 white-space: normal;
                 text-align: left;
             }
@@ -573,16 +567,10 @@
                 white-space: normal;
             }
 
-            .founders-grid {
-                grid-template-columns: 1fr;
-                max-width: 340px;
-            }
+            .founders-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
         }
 
-        @media (max-width: 500px) {
-            .creative-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 500px) { .creative-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
         }
 
@@ -617,3 +605,70 @@
             background: linear-gradient(135deg, #f1f5f9 0%, #e8eef8 100%);
             border-top: 1px solid rgba(15,23,42,0.08);
         }
+
+/* --- MOBILE FIX 13 --- */
+@media (max-width: 500px) {
+  .team-hero {
+    margin-top: 130px !important;
+    padding-bottom: 40px !important;
+  }
+  .pcard {
+    border-radius: 12px !important;
+  }
+  .pcard-photo { height: 100% !important;
+    object-fit: cover;
+    object-position: top;
+  }
+  .pcard-info {
+    padding: 16px !important;
+  }
+  .pcard-name {
+    font-size: 1rem !important;
+  }
+  .creative-grid {
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .pcard-photo { height: 100% !important;
+  }
+}
+
+
+
+@media (max-width: 768px) { .pcard-strip h3 { font-size: 0.9rem; } .pcard-strip p { font-size: 0.6rem; letter-spacing: 0.5px; } .phover-name { font-size: 1rem; } .phover-role { font-size: 0.55rem; letter-spacing: 0.5px; margin-bottom: 6px; } .phover-bio { font-size: 0.65rem; line-height: 1.3; margin-bottom: 8px; } .phover-socials { gap: 4px; } .phover-socials a { width: 24px; height: 24px; font-size: 0.7rem; } .pcard-hover-inner { padding: 12px; } }
+
+
+/* --- MOBILE FIX FOR SECTION DIVIDERS --- */
+@media (max-width: 768px) {
+    .section-divider {
+        padding: 24px 0 16px !important;
+        gap: 12px !important;
+    }
+    .section-divider h3 {
+        font-size: 1.1rem !important;
+        letter-spacing: 2px !important;
+        white-space: normal !important;
+        text-align: center !important;
+    }
+    .section-divider.divider-left {
+        justify-content: center !important;
+    }
+    .section-divider.divider-left::before {
+        display: block !important;
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+    }
+}
+
+/* --- MOBILE FIX FOR CTA SECTION --- */
+@media (max-width: 640px) {
+    .join-cta { padding: 32px 20px 32px !important; }
+    .join-cta h2 { font-size: 1.6rem !important; line-height: 1.2 !important; margin-bottom: 8px !important; }
+    .join-cta p { font-size: 0.9rem !important; padding: 0 10px; margin-bottom: 20px !important; }
+    .join-btns { flex-direction: column !important; align-items: center !important; gap: 12px !important; }
+    .join-btns a { width: 100% !important; max-width: 260px !important; justify-content: center !important; }
+}

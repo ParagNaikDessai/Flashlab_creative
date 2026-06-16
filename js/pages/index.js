@@ -542,3 +542,14 @@ window.addEventListener('scroll', () => {
     }
   });
 })();
+
+/* TAP-TO-FLIP for touch devices */
+(function () {
+  if (window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.flip-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        card.classList.toggle('flipped');
+      });
+    });
+  }
+})();

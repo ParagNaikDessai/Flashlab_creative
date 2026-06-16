@@ -1,8 +1,19 @@
+# Environment / secrets
 .env
-*.env
+
+# Node dependencies (regenerated with npm install)
 node_modules/
+
+# Python cache
 __pycache__/
 *.pyc
-.vscode/
-backend/.flashlab_rag_kb_*.pkl
+*.pyo
+*.pyd
+*.pkl
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
