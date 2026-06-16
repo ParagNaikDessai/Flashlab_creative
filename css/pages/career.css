@@ -70,7 +70,7 @@
    HERO
    ============================================================ */
     .career-hero {
-      padding: 280px 5% 120px;
+      padding: 160px 5% 120px;
       background: var(--bg2);
       position: relative;
       overflow: hidden;
@@ -1079,4 +1079,5 @@
     margin-top: 12px !important;
   }
 }
+
 
