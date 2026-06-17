@@ -1322,3 +1322,115 @@
     padding: 40px 0 !important;
   }
 }
+
+/* === AGGRESSIVE MOBILE COMPRESSION === */
+@media (max-width: 1024px) {
+  body[data-page="about"] .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+  }
+  body[data-page="about"] .hide-on-mobile {
+    display: none;
+  }
+  body[data-page="about"] .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body[data-page="about"] .footer-brand p {
+    margin: 0;
+  }
+  body[data-page="about"] .footer-list a {
+    min-height: 24px;
+    font-size: 0.75rem;
+  }
+  body[data-page="about"] .footer-head {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  body[data-page="about"] .svc-card {
+    height: 120px;
+    min-height: 120px;
+    border-radius: 8px;
+  }
+  body[data-page="about"] .svc-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="about"] .svc-content {
+    padding: 12px;
+  }
+  body[data-page="about"] .flip-cards-grid {
+    gap: 10px;
+    padding: 0 4px;
+  }
+  body[data-page="about"] .flip-card {
+    height: auto;
+    border-radius: 8px;
+  }
+  body[data-page="about"] .flip-card-inner {
+    border-radius: 8px;
+  }
+  body[data-page="about"] .flip-face-img {
+    height: 60px;
+  }
+  body[data-page="about"] .flip-face-img .face-overlay {
+    padding: 6px 10px;
+  }
+  body[data-page="about"] .flip-face-img .face-num {
+    font-size: 0.6rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="about"] .flip-face-img .face-title {
+    font-size: 0.95rem;
+  }
+  body[data-page="about"] .flip-front-icon {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="about"] .flip-face-text {
+    padding: 10px 10px 12px;
+    border-radius: 0 0 8px 8px;
+  }
+  body[data-page="about"] .flip-face-text p {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  body[data-page="about"] .flip-face-text .face-link {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    min-height: 32px;
+    margin: 0;
+  }
+  body[data-page="about"] section:not([class*="-hero"]):not(.hero) {
+    padding: 30px 0;
+  }
+  body[data-page="about"] .sec-heading {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    line-height: 1.1;
+  }
+  body[data-page="about"] .sec-sub {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  body[data-page="about"] .sec-body {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  body[data-page="about"] .about-list {
+    gap: 8px;
+    margin: 12px 0 16px;
+  }
+  body[data-page="about"] .about-list li {
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+}

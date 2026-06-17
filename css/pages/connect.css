@@ -1047,3 +1047,10 @@
     font-size: 2.2rem !important;
   }
 }
+
+/* Uppercase emphasized headings */
+.hero-title em,
+.sec-heading em,
+.join-heading em {
+  text-transform: uppercase;
+}
