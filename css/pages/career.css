@@ -743,7 +743,7 @@
     .form-close-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ============================================================
-   HR CONTACT STRIP  — below positions layout
+   HR CONTACT STRIP  ï¿½ below positions layout
    ============================================================ */
     .hr-contact-strip {
       margin-top: 56px;
@@ -982,6 +982,7 @@
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
       color: var(--accent2);
+      text-transform: uppercase;
     }
 
     .no-role-sub { color: var(--muted); font-size: 1rem; max-width: 500px; line-height: 1.75; }
@@ -1089,7 +1090,7 @@
 =======
 
 /* ============================================================
-   HERO MOBILE FIX — Full Mobile Responsiveness
+   HERO MOBILE FIX ï¿½ Full Mobile Responsiveness
    ============================================================ */
 
 /* Prevent horizontal overflow globally */
@@ -1166,7 +1167,7 @@ body[data-page="career"] {
   }
 }
 
-/* Medium mobile (481px–640px) */
+/* Medium mobile (481pxï¿½640px) */
 @media (min-width: 481px) and (max-width: 640px) {
   .career-hero {
     padding: 150px 24px 70px !important;
@@ -1207,7 +1208,7 @@ body[data-page="career"] {
   }
 }
 
-/* Tablet (641px–960px) — already handled by existing styles */
+/* Tablet (641pxï¿½960px) ï¿½ already handled by existing styles */
 @media (min-width: 641px) and (max-width: 960px) {
   .hero-h1 {
     font-size: clamp(3rem, 7vw, 5rem) !important;

@@ -616,6 +616,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent2);
     }
     .sec-sub {
@@ -1515,6 +1516,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent2);
     }
     .cta-band p {
@@ -1826,4 +1828,3 @@
     height: 200px !important;
   }
 }
-

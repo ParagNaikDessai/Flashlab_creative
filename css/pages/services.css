@@ -1,4 +1,4 @@
-﻿    /* ══════════════════════════════════════
+﻿﻿    /* ══════════════════════════════════════
        PAGE-LEVEL CSS VARIABLES
     ══════════════════════════════════════ */
     :root {
@@ -98,6 +98,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       color: var(--accent2);
+      text-transform: uppercase;
       font-weight: 700;
     }
 
@@ -188,6 +189,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent2);
     }
 
@@ -266,6 +268,7 @@
     .pillars-big-heading em {
       display: block;
       font-size: 1.08em;
+      text-transform: uppercase;
     }
 
     .pillars-grid {
@@ -648,6 +651,7 @@
     .contact-band h2 em {
       font-style: normal;
       font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
     }
 
     .contact-band p {
