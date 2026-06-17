@@ -133,78 +133,88 @@ window.addEventListener('scroll', () => {
 
 /* HERO SLIDE CYCLER */
 (function () {
-  const SLIDES = [
-    { big: "Goa's Most Trusted\nCreative Agency", small: "With over a decade of experience in Goa, we have established benchmarks for excellence across hospitality, real estate, lifestyle, and modern brands" },
-    { big: "We Build Brands\nThat Move People", small: "Bold identities and meaningful storytelling crafted to connect with audiences and leave a lasting impression." },
-    { big: "Creative Thinkers\nWith Real Impact", small: "Designers, strategists and marketers working together to create campaigns that people remember and brands that grow from." },
-    { big: "Campaigns Backed\nBy Performance", small: "Data-driven marketing across Meta, Google and other various digital platforms. Focused on visibility, engagement and measurable growth." }
-  ];
-  const DURATION = 5500, ANIM = 600;
-  const wrap = document.getElementById('heroSlideWrap');
-  const dotsContainer = document.getElementById('heroSlideDots');
-  if (!wrap || !dotsContainer) return;
-  const slideEls = SLIDES.map(s => {
-    const el = document.createElement('div');
-    el.className = 'hero-slide';
-    el.innerHTML = '<div class="hero-slide-big">' + s.big.split('\n').join('<br>') + '</div><div class="hero-slide-small">' + s.small + '</div>';
-    wrap.appendChild(el);
-    return el;
-  });
-  const dotEls = SLIDES.map(() => {
-    const dot = document.createElement('div');
-    dot.className = 'hero-slide-dot';
-    const fill = document.createElement('div');
-    fill.className = 'hero-slide-dot-fill';
-    dot.appendChild(fill);
-    dotsContainer.appendChild(dot);
-    return dot;
-  });
-  let current = 0, timer = null, transitioning = false;
-  function activateDot(idx) {
-    dotEls.forEach((d, i) => {
-      d.classList.remove('active', 'done');
-      const fill = d.querySelector('.hero-slide-dot-fill');
-      fill.style.animation = 'none';
-      fill.offsetHeight;
-      if (i < idx) {
-        d.classList.add('done');
-        fill.style.width = '100%';
-      }
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.dots span');
+
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let autoSlide;
+
+    if (!slides.length) return; // Prevent script errors on other pages
+
+    function updateIndicators() {
+        indicators.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function goToSlide(index) {
+
+        if (index >= totalSlides) index = 0;
+        if (index < 0) index = totalSlides - 1;
+
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        slides[index].classList.add('active');
+
+        const title = slides[index].querySelector('h1');
+        if (title) {
+            title.classList.remove('animate');
+            void title.offsetWidth;
+            title.classList.add('animate');
+        }
+
+        const subtext = slides[index].querySelector('p');
+        if (subtext) {
+            subtext.classList.remove('animate');
+            void subtext.offsetWidth;
+            subtext.classList.add('animate');
+        }
+
+        const heroBg = document.querySelector('.hero-bg-img');
+        const bgImg = slides[index].getAttribute('data-bg');
+        if (heroBg && bgImg) {
+            heroBg.style.backgroundImage = `url('${encodeURI(bgImg)}')`;
+            const bgPos = slides[index].getAttribute('data-bg-pos');
+            heroBg.style.backgroundPosition = bgPos || 'center';
+        }
+
+        currentSlide = index;
+
+        updateIndicators();
+    }
+
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+
+    indicators.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            restartAutoSlide();
+        });
     });
-    dotEls[idx].classList.add('active');
-    const fill = dotEls[idx].querySelector('.hero-slide-dot-fill');
-    fill.style.animation = 'dotProgress ' + DURATION + 'ms linear forwards';
-  }
-  function goTo(nextIdx) {
-    if (transitioning) return;
-    transitioning = true;
-    clearTimeout(timer);
-    const curr = slideEls[current];
-    const next = slideEls[nextIdx];
-    curr.classList.remove('visible');
-    curr.classList.add('exiting');
-    setTimeout(() => {
-      next.classList.add('entering');
-      setTimeout(() => {
-        next.classList.remove('entering');
-        next.classList.add('visible');
-      }, ANIM);
-    }, ANIM / 2);
-    setTimeout(() => {
-      curr.classList.remove('exiting');
-      transitioning = false;
-      current = nextIdx;
-      scheduleNext();
-    }, ANIM + 50);
-    activateDot(nextIdx);
-  }
-  function scheduleNext() {
-    clearTimeout(timer);
-    timer = setTimeout(() => goTo((current + 1) % SLIDES.length), DURATION);
-  }
-  slideEls[0].classList.add('visible');
-  activateDot(0);
-  scheduleNext();
+
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+
+    function restartAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    // Initial Load
+    goToSlide(0);
+    startAutoSlide();
 })();
 
 /* PORTFOLIO CAROUSEL */
