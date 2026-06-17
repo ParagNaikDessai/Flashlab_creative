@@ -63,14 +63,33 @@
     .fq-author strong { font-size: 0.8rem !important; }
     .fq-author span { font-size: 0.65rem !important; }
     
-<<<<<<< Updated upstream
-    /* General Spacing */
-=======
     /* General Spacing — exclude career-hero so its own rules apply */
->>>>>>> Stashed changes
     section:not(.career-hero) { padding: 30px 0 !important; }
+    .sec-header { margin-bottom: 24px !important; }
     .sec-heading { font-size: 1.5rem !important; margin-bottom: 12px !important; }
     .sec-sub { font-size: 0.85rem !important; margin-bottom: 20px !important; }
+    .life-collage { margin-top: 12px !important; }
+    
+    /* Perks Carousel */
+    .perks-grid {
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+      gap: 16px !important;
+      background: transparent !important;
+      border: none !important;
+      padding-bottom: 20px !important;
+    }
+    .perks-grid::-webkit-scrollbar { display: none !important; }
+    .perk-card {
+      min-width: 85% !important;
+      scroll-snap-align: center !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 12px !important;
+    }
+
     /* 6. Clients Section */
     .clients-section { padding-top: 40px !important; padding-bottom: 40px !important; }
     .cl-item { width: 140px !important; height: 90px !important; }
@@ -106,23 +125,25 @@
 
   @media (max-width: 480px) {
     .career-hero {
-      padding: 120px 18px 56px !important;
+      padding: 120px 18px 20px !important;
+      min-height: auto !important;
+    }
+    section.life-section {
+      padding-top: 0px !important;
     }
     .hero-inner {
       display: flex !important;
       flex-direction: column !important;
-      gap: 28px !important;
+      gap: 16px !important;
     }
-    /* Show image first */
-    .reveal-right { order: -1; }
     .hero-img-wrap {
       border-radius: 14px !important;
       overflow: hidden !important;
-      max-height: 210px !important;
+      max-height: 280px !important;
     }
     .hero-img-wrap img {
       width: 100% !important;
-      height: 210px !important;
+      height: 280px !important;
       object-fit: cover !important;
       object-position: center top !important;
     }
@@ -145,7 +166,7 @@
     .hero-desc {
       font-size: 0.88rem !important;
       line-height: 1.6 !important;
-      margin-bottom: 24px !important;
+      margin-bottom: 8px !important;
       max-width: 100% !important;
     }
     .hero-actions {
@@ -166,22 +187,25 @@
 
   @media (min-width: 481px) and (max-width: 640px) {
     .career-hero {
-      padding: 140px 24px 64px !important;
+      padding: 140px 24px 20px !important;
+      min-height: auto !important;
+    }
+    section.life-section {
+      padding-top: 0px !important;
     }
     .hero-inner {
       display: flex !important;
       flex-direction: column !important;
-      gap: 32px !important;
+      gap: 20px !important;
     }
-    .reveal-right { order: -1; }
     .hero-img-wrap {
       border-radius: 16px !important;
       overflow: hidden !important;
-      max-height: 250px !important;
+      max-height: 320px !important;
     }
     .hero-img-wrap img {
       width: 100% !important;
-      height: 250px !important;
+      height: 320px !important;
       object-fit: cover !important;
       object-position: center top !important;
     }
@@ -193,7 +217,7 @@
     .hero-desc {
       font-size: 0.92rem !important;
       max-width: 100% !important;
-      margin-bottom: 26px !important;
+      margin-bottom: 12px !important;
     }
     .hero-actions {
       gap: 10px !important;
@@ -202,6 +226,13 @@
     .hero-actions a {
       font-size: 0.9rem !important;
     }
+  }
+
+  /* Desktop/Mobile specific buttons */
+  .mobile-hero-actions { display: none; }
+  @media (max-width: 640px) {
+    .desktop-hero-actions { display: none !important; }
+    .mobile-hero-actions { display: flex !important; }
   }
 
   @media (min-width: 641px) and (max-width: 960px) {
@@ -331,7 +362,7 @@
             <h1 class="hero-h1">Build Your<br><em>Career Here</em></h1>
             <p class="hero-desc">Join one of Goa's most dynamic creative agencies. Work on real brands, real campaigns,
               and real challenges &mdash; from day one.</p>
-            <div class="hero-actions">
+            <div class="hero-actions desktop-hero-actions">
               <a href="#open-positions" class="btn-primary">View Open Positions <i class="ri-arrow-down-line"></i></a>
             </div>
           </div>
@@ -339,6 +370,9 @@
             <div class="hero-img-wrap">
               <img src="images/team-collaboration-office-2.png" alt="Flashlab Creative Team">
             </div>
+          </div>
+          <div class="hero-actions mobile-hero-actions reveal" style="width: 100%; animation-delay: 0.4s;">
+            <a href="#open-positions" class="btn-primary" style="width: 100%; justify-content: center;">View Open Positions <i class="ri-arrow-down-line"></i></a>
           </div>
         </div>
       </div>

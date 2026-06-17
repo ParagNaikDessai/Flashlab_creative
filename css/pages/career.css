@@ -70,11 +70,8 @@
    HERO
    ============================================================ */
     .career-hero {
-<<<<<<< Updated upstream
       padding: 160px 5% 120px;
-=======
       padding: 140px 5% 80px;
->>>>>>> Stashed changes
       background: var(--bg2);
       position: relative;
       overflow: hidden;
@@ -1085,8 +1082,6 @@
 }
 
 
-<<<<<<< Updated upstream
-=======
 
 /* ============================================================
    HERO MOBILE FIX — Full Mobile Responsiveness
@@ -1104,7 +1099,7 @@ body[data-page="career"] {
 /* Small mobile (=480px) */
 @media (max-width: 480px) {
   .career-hero {
-    padding: 130px 20px 60px !important;
+    padding: 130px 20px 10px !important;
   }
 
   .hero-inner {
@@ -1169,7 +1164,7 @@ body[data-page="career"] {
 /* Medium mobile (481px–640px) */
 @media (min-width: 481px) and (max-width: 640px) {
   .career-hero {
-    padding: 150px 24px 70px !important;
+    padding: 150px 24px 10px !important;
   }
 
   .hero-inner {
@@ -1282,4 +1277,3 @@ body[data-page="career"] {
     padding: 0 16px 16px !important;
   }
 }
->>>>>>> Stashed changes
