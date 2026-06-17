@@ -237,3 +237,34 @@ document.querySelectorAll('.pcard').forEach(card => {
     if (e.key === 'ArrowLeft' && cur > 0) switchYear(cur - 1);
   });
 })();
+
+/* MOBILE CAROUSEL ARROWS */
+(function() {
+  const whoGrid = document.getElementById('whoGrid');
+  const whoPrev = document.getElementById('whoPrev');
+  const whoNext = document.getElementById('whoNext');
+  if(whoGrid && whoPrev && whoNext) {
+    whoPrev.addEventListener('click', () => {
+      const cardWidth = whoGrid.querySelector('.who-card').offsetWidth + 22;
+      whoGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+    whoNext.addEventListener('click', () => {
+      const cardWidth = whoGrid.querySelector('.who-card').offsetWidth + 22;
+      whoGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+  }
+
+  const whyGrid = document.getElementById('whyGrid');
+  const whyPrev = document.getElementById('whyPrev');
+  const whyNext = document.getElementById('whyNext');
+  if(whyGrid && whyPrev && whyNext) {
+    whyPrev.addEventListener('click', () => {
+      const cardWidth = whyGrid.querySelector('.why-card').offsetWidth + 18;
+      whyGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+    whyNext.addEventListener('click', () => {
+      const cardWidth = whyGrid.querySelector('.why-card').offsetWidth + 18;
+      whyGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+  }
+})();

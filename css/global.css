@@ -1066,52 +1066,7 @@ li, blockquote, input, textarea { cursor: text; }
   .footer-bottom p { font-size: .74rem; }
 }
 
-/* ============================================================
-   15. BACK TO TOP
-   ============================================================ */
-.back-top {
-  position: fixed;
-  bottom: 72px;
-  left: 30px;
-  z-index: 9999;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #a8e832 !important;
-  color: #0a0a0f !important;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 16px rgba(168,232,50,.35);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: opacity .3s, visibility .3s, transform .3s;
-  pointer-events: none;
-}
-.back-top.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
-  pointer-events: all !important;
-}
-.back-top:hover {
-  background: #bef54a !important;
-  transform: translateY(-3px) !important;
-}
 
-@media (max-width: 640px) {
-  .back-top {
-    bottom: 64px;
-    left: 16px;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-}
 
 /* ============================================================
    16. MARQUEE
@@ -1244,7 +1199,8 @@ html, body {
 .back-top {
   position: fixed;
   bottom: 72px;
-  left: 30px;
+  right: 30px !important;
+  left: auto !important;
   z-index: 9999;
   width: 46px;
   height: 46px;
@@ -1422,7 +1378,8 @@ html, body {
 @media (max-width: 640px) {
   .back-top {
     bottom: 80px;
-    left: 14px;
+    right: 14px;
+    left: auto;
     width: 42px;
     height: 42px;
     font-size: 1rem;

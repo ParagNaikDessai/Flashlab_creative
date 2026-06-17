@@ -205,7 +205,11 @@
 
     .who-section {
       background: var(--bg);
-      padding: 80px 0;
+      padding: 0 0 80px;
+    }
+
+    .who-nav-arrows {
+      display: none;
     }
 
     .who-grid {
@@ -1075,12 +1079,101 @@
     }
 
     @media(max-width:640px) {
+      .year-tabs {
+        justify-content: flex-start;
+      }
+      .who-section {
+        padding-bottom: 30px;
+      }
+      .timeline-section {
+        padding-bottom: 30px;
+      }
+      .join-cta {
+        padding: 40px 5%;
+      }
+      .why-section {
+        padding: 40px 0;
+        background-position: top center;
+      }
+
       .why-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        align-items: stretch;
+      }
+      .why-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .why-grid .why-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
       }
 
       .who-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        align-items: stretch;
+      }
+      .who-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .who-grid .who-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      .who-grid .who-card ul {
+        padding-right: 5px;
+      }
+      .who-carousel-wrap, .why-carousel-wrap {
+        position: relative;
+      }
+      .who-nav-arrows, .why-nav-arrows {
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        right: -12px;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        margin-top: 0;
+      }
+      .who-nav-arrows .carousel-nav, .why-nav-arrows .carousel-nav {
+        pointer-events: auto;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        /* Blur background slightly so text underneath is obscured but visible */
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .who-nav-arrows .carousel-nav:hover, .why-nav-arrows .carousel-nav:hover {
+        background: var(--accent);
+        color: #0a0a0f;
+        border-color: var(--accent);
       }
 
       .join-btns {
