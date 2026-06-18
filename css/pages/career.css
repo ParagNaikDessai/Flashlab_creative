@@ -70,8 +70,7 @@
    HERO
    ============================================================ */
     .career-hero {
-      padding: 160px 5% 120px;
-      padding: 140px 5% 80px;
+      padding: 190px 5% 80px;
       background: var(--bg2);
       position: relative;
       overflow: hidden;
@@ -136,7 +135,7 @@
       font-size: 1.05rem;
       line-height: 1.8;
       max-width: 460px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     .hero-actions {
@@ -147,15 +146,21 @@
 
     .hero-img-wrap {
       position: relative;
-      border-radius: 20px;
+      border-radius: 28px;
       overflow: hidden;
+      max-width: 420px;
+      height: 460px;
+      margin-left: auto;
     }
 
     .hero-img-wrap img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       display: block;
       filter: saturate(0.9);
+      border-radius: 28px;
     }
 
     .hero-img-wrap::after {
