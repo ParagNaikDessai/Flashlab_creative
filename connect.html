@@ -127,12 +127,26 @@
   <!-- ===== HERO — HAPPY TO ASSIST ===== -->
   <section class="hero-section">
     <div class="hero-noise"></div>
+    
+    <!-- Social sidebar positioned absolutely to the left -->
+    <div class="sidebar-socials reveal" style="--delay:0.5s; position:absolute; left:3%; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:20px; z-index:10;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:20px;">
+        <div style="width:6px; height:6px; background:var(--accent); border-radius:50%;"></div>
+        <div style="width:1px; height:40px; background:rgba(255,255,255,0.2);"></div>
+        <span style="writing-mode:vertical-rl; transform:rotate(180deg); font-size:0.75rem; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-top:10px;">Follow Us</span>
+      </div>
+      <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener" style="width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:var(--muted); text-decoration:none; transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.color='var(--muted)';"><i class="ri-instagram-line"></i></a>
+      <a href="https://www.linkedin.com/company/flashlabcreative/" target="_blank" rel="noopener" style="width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:var(--muted); text-decoration:none; transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.color='var(--muted)';"><i class="ri-linkedin-fill"></i></a>
+      <a href="https://x.com/theflashlab" target="_blank" rel="noopener" style="width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:var(--muted); text-decoration:none; transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.color='var(--muted)';"><i class="ri-twitter-x-line"></i></a>
+      <a href="https://www.facebook.com/share/1BYmzHhn1o/" target="_blank" rel="noopener" style="width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:var(--muted); text-decoration:none; transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.color='var(--muted)';"><i class="ri-facebook-fill"></i></a>
+    </div>
+
     <div class="hero-inner">
 
       <div class="hero-left">
-        <h1 class="hero-title reveal" style="--delay:0.1s">
-          Get in Touch<br>
-          <em>With Us.</em>
+        <h1 class="hero-title reveal" style="--delay:0.1s" style="text-transform:uppercase;">
+          GET IN TOUCH<br>
+          <span style="color:var(--accent2); font-family:var(--font-head); font-weight:700;">WITH US.</span>
         </h1>
 
         <p class="hero-desc reveal" style="--delay:0.2s">
@@ -141,21 +155,7 @@
           grow. Fill out the form and we'll connect with you shortly.
         </p>
 
-        <div class="hero-info-cards reveal" style="--delay:0.3s">
-          <div class="info-card">
-            <div class="info-card-icon"><i class="ri-mail-line"></i></div>
-            <div class="info-card-text">
-              <h5>Email Us</h5>
-              <p><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-icon"><i class="ri-phone-line"></i></div>
-            <div class="info-card-text">
-              <h5>Call Us</h5>
-              <p><a href="tel:+919822137422">+91 98221 37422</a></p>
-            </div>
-          </div>
+        <div class="hero-info-cards reveal" style="--delay:0.4s">
           <div class="info-card" style="grid-column: 1 / -1;">
             <div class="info-card-icon"><i class="ri-user-star-line"></i></div>
             <div class="info-card-text">
@@ -166,17 +166,9 @@
             </div>
           </div>
         </div>
-
-        <div class="hero-socials reveal" style="--delay:0.4s">
-          <span>Follow</span>
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/share/1BYmzHhn1o/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
-          <a href="https://x.com/theflashlab" target="_blank" rel="noopener" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
-        </div>
       </div>
 
-      <div class="hero-right reveal-right">
+      <div class="hero-right reveal-right" style="transform: translateY(-30px);">
         <div class="hero-image-frame">
           <img src="images/team-gathered-around-laptops.png" alt="Flashlab Creative Team"
             onerror="this.style.display='none';document.getElementById('hero-placeholder').style.display='flex'">
@@ -199,7 +191,7 @@
   </section>
 
   <!-- ===== CONTACT DETAILS + FORM ===== -->
-  <section class="contact-section" id="connect">
+  <section class="contact-section" id="connect" style="padding-bottom: 20px;">
     <div class="wrap">
       <div class="contact-grid">
 
@@ -301,43 +293,10 @@
     </div>
   </section>
 
-  <!-- ===== JOIN OUR TEAM ===== -->
-  <section class="join-section" id="career">
-    <div class="wrap">
-      <div class="join-inner">
-
-        <div class="join-left reveal-left">
-          <h2 class="join-heading">Start Your Career<br><em>with Flashlab Creative</em></h2>
-          <p class="join-body">We're always looking for passionate, creative individuals to grow with us. Explore open
-            roles and become part of our journey.</p>
-          <ul class="join-perks">
-            <li class="join-perk"><i class="ri-checkbox-circle-fill"></i> Work with top brands across Goa &amp; India</li>
-            <li class="join-perk"><i class="ri-checkbox-circle-fill"></i> Collaborative, creative work environment</li>
-            <li class="join-perk"><i class="ri-checkbox-circle-fill"></i> Grow your skills with real-world projects</li>
-            <li class="join-perk"><i class="ri-checkbox-circle-fill"></i> Internship &amp; full-time opportunities available</li>
-          </ul>
-          <a href="career.html" class="btn-join">View Open Positions <i class="ri-arrow-right-line"></i></a>
-        </div>
-
-        <div class="join-right reveal-right">
-          <div class="join-card-main">
-            <div class="big-num">FL</div>
-            <img src="images/flashlab-job-interview-scene.png" alt="Flashlab Creative Team" onerror="this.style.display='none'">
-            <div class="join-card-main-label">
-              <h4>Join the Creative Lab</h4>
-              <p>Open roles — Margao, Goa</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ===== MAP ===== -->
   <section class="map-section">
     <div class="map-section-inner">
-      <div class="map-header reveal">
+      <div class="map-header reveal" style="padding-top: 30px;">
         <h2 class="sec-heading" style="font-size:clamp(2rem,4vw,3.5rem);">We're in <em>Margao, Goa</em></h2>
       </div>
       <div class="map-embed-wrap">

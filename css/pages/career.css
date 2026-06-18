@@ -1196,7 +1196,7 @@ body[data-page="career"] .pos-panel {
       .faq-grid { grid-template-columns: 1fr; gap: 40px; }
       .no-role-inner { grid-template-columns: 1fr; }
       .no-role-actions { align-items: flex-start; }
-      .footer-grid { grid-template-columns: 1fr 1fr;1fr; gap: 30px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
     }
 
     @media (max-width:768px) {

@@ -1888,6 +1888,7 @@
       width: 60px;
       z-index: 5;
       pointer-events: none;
+      display: none !important;
     }
 
     .testi-carousel-outer::before { left: 0; background: linear-gradient(to right, rgba(0,0,0,0.6), transparent); }
@@ -1908,6 +1909,7 @@
       border-radius: 14px;
       text-align: left;
       position: relative;
+      box-sizing: border-box;
       box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
       flex: 0 0 280px;
       width: 280px;
@@ -1953,6 +1955,9 @@
       font-style: normal;
       flex: 1;
       margin: 0;
+      width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .testi-author {
@@ -2432,6 +2437,10 @@
         align-items: center;
         gap: 8px;
         text-align: center;
+      }
+      .testi-carousel-outer::before,
+      .testi-carousel-outer::after {
+        display: none;
       }
       .testi-card { flex: 0 0 280px; width: 280px; }
       .cl-item {
