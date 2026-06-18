@@ -554,13 +554,19 @@
 
     .year-tabs {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 0;
       margin-bottom: 40px;
       overflow-x: auto;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
       border-bottom: 2px solid var(--border);
+    }
+
+    .year-tabs::before,
+    .year-tabs::after {
+      content: '';
+      margin: auto;
     }
 
     .year-tabs::-webkit-scrollbar {
@@ -1432,5 +1438,56 @@
   body[data-page="about"] .about-list li {
     font-size: 0.8rem;
     gap: 8px;
+  }
+}
+
+/* --- MOBILE SWIPE CAROUSEL FOR CARDS --- */
+@media (max-width: 768px) {
+  .who-grid, .why-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    gap: 16px !important;
+    padding-bottom: 20px !important;
+    /* Optional: Make it bleed to the edge of the screen */
+    margin-right: -6% !important;
+    padding-right: 6% !important;
+  }
+  .who-grid::-webkit-scrollbar, .why-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .who-card, .why-card {
+    min-width: 75vw !important;
+    max-width: 75vw !important;
+    width: 75vw !important;
+    min-height: 360px !important;
+    padding: 40px 24px !important;
+    scroll-snap-align: start !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
+  
+  /* Force visibility on mobile so off-screen cards are visible to peek and swipe */
+  .who-card.reveal, .why-card.reveal, 
+  .who-card[style], .why-card[style] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .who-card-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 0 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 14px !important;
+  }
+  .who-nav-arrows, .why-nav-arrows {
+    display: none !important;
   }
 }
