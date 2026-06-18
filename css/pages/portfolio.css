@@ -1320,6 +1320,8 @@
     }
     @media (max-width:900px) {
       #port-hero { padding: 160px 5% 70px; }
+      .hero-layout { flex-direction: column; align-items: stretch; gap: 40px; }
+      .hero-img-box { flex: 0 0 auto; width: 100%; height: auto; aspect-ratio: 4/3; margin: 0; }
       .port-section { padding: 50px 5%; }
       .founder-row, .founder-row.reverse { flex-wrap: wrap; }
       .founder-portrait-sm { width: 90px; height: 115px; }
