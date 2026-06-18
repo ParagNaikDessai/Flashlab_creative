@@ -955,10 +955,7 @@ body[data-page="career"] .pos-panel {
     flex-direction: column;
     gap: 28px;
   }
-  /* Show image first */
-  body[data-page="career"] .reveal-right {
-    order: -1;
-  }
+
   body[data-page="career"] .hero-img-wrap {
     border-radius: 14px;
     overflow: hidden;
@@ -1017,9 +1014,7 @@ body[data-page="career"] .pos-panel {
     flex-direction: column;
     gap: 32px;
   }
-  body[data-page="career"] .reveal-right {
-    order: -1;
-  }
+
   body[data-page="career"] .hero-img-wrap {
     border-radius: 16px;
     overflow: hidden;
