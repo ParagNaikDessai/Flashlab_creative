@@ -214,6 +214,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent2);
     }
     .sec-sub {
@@ -1113,6 +1114,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent2);
     }
     .cta-band p {
@@ -1425,3 +1427,46 @@
   }
 }
 
+/* === AGGRESSIVE MOBILE COMPRESSION === */
+@media (max-width: 1024px) {
+  body[data-page="portfolio"] .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+  }
+  body[data-page="portfolio"] .hide-on-mobile {
+    display: none;
+  }
+  body[data-page="portfolio"] .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body[data-page="portfolio"] .footer-brand p {
+    margin: 0;
+  }
+  body[data-page="portfolio"] .footer-list a {
+    min-height: 24px;
+    font-size: 0.75rem;
+  }
+  body[data-page="portfolio"] .footer-head {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  body[data-page="portfolio"] section:not([class*="-hero"]):not(.hero) {
+    padding: 30px 0;
+  }
+  body[data-page="portfolio"] .sec-heading {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    line-height: 1.1;
+  }
+  body[data-page="portfolio"] .sec-sub {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+}

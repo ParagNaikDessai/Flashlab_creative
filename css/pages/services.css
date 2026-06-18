@@ -1,4 +1,4 @@
-﻿    /* ══════════════════════════════════════
+﻿﻿    /* ══════════════════════════════════════
        PAGE-LEVEL CSS VARIABLES
     ══════════════════════════════════════ */
     :root {
@@ -98,6 +98,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       color: var(--accent2);
+      text-transform: uppercase;
       font-weight: 700;
     }
 
@@ -188,6 +189,7 @@
       font-style: normal;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent2);
     }
 
@@ -266,6 +268,7 @@
     .pillars-big-heading em {
       display: block;
       font-size: 1.08em;
+      text-transform: uppercase;
     }
 
     .pillars-grid {
@@ -648,6 +651,7 @@
     .contact-band h2 em {
       font-style: normal;
       font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
     }
 
     .contact-band p {
@@ -893,5 +897,104 @@
 @media (max-width: 480px) {
   .service-hero {
     padding-top: 140px !important;
+  }
+}
+
+/* === AGGRESSIVE MOBILE COMPRESSION === */
+@media (max-width: 1024px) {
+  body[data-page="services"] .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+  }
+  body[data-page="services"] .hide-on-mobile {
+    display: none;
+  }
+  body[data-page="services"] .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body[data-page="services"] .footer-brand p {
+    margin: 0;
+  }
+  body[data-page="services"] .footer-list a {
+    min-height: 24px;
+    font-size: 0.75rem;
+  }
+  body[data-page="services"] .footer-head {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  body[data-page="services"] .svc-card {
+    height: 120px;
+    min-height: 120px;
+    border-radius: 8px;
+  }
+  body[data-page="services"] .svc-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="services"] .svc-content {
+    padding: 12px;
+  }
+  body[data-page="services"] .flip-cards-grid {
+    gap: 10px;
+    padding: 0 4px;
+  }
+  body[data-page="services"] .flip-card {
+    height: auto;
+    border-radius: 8px;
+  }
+  body[data-page="services"] .flip-card-inner {
+    border-radius: 8px;
+  }
+  body[data-page="services"] .flip-face-img {
+    height: 60px;
+  }
+  body[data-page="services"] .flip-face-img .face-overlay {
+    padding: 6px 10px;
+  }
+  body[data-page="services"] .flip-face-img .face-num {
+    font-size: 0.6rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="services"] .flip-face-img .face-title {
+    font-size: 0.95rem;
+  }
+  body[data-page="services"] .flip-front-icon {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="services"] .flip-face-text {
+    padding: 10px 10px 12px;
+    border-radius: 0 0 8px 8px;
+  }
+  body[data-page="services"] .flip-face-text p {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  body[data-page="services"] .flip-face-text .face-link {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    min-height: 32px;
+    margin: 0;
+  }
+  body[data-page="services"] section:not([class*="-hero"]):not(.hero) {
+    padding: 30px 0;
+  }
+  body[data-page="services"] .sec-heading {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    line-height: 1.1;
+  }
+  body[data-page="services"] .sec-sub {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
   }
 }

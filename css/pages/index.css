@@ -109,6 +109,7 @@
       color: var(--accent2);
       font-size: 0.9em;
       font-weight: 700;
+      text-transform: uppercase;
     }
 
     .sec-sub {
@@ -589,6 +590,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      text-transform: uppercase;
     }
 
     .outstanding-body {
@@ -2250,6 +2252,7 @@
       font-style: normal;
       color: var(--accent2);
       font-weight: 700;
+      text-transform: uppercase;
     }
 
     .cta-actions {

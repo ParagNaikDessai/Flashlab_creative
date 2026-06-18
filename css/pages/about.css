@@ -15,6 +15,7 @@
       color: var(--accent2);
       font-weight: 700;
       -webkit-text-fill-color: var(--accent2);
+      text-transform: uppercase;
     }
 
     /* h1 em keeps accent2 (orange) as used in hero */
@@ -205,11 +206,7 @@
 
     .who-section {
       background: var(--bg);
-      padding: 0 0 80px;
-    }
-
-    .who-nav-arrows {
-      display: none;
+      padding: 80px 0;
     }
 
     .who-grid {
@@ -470,7 +467,7 @@
       padding: 85px 0;
       overflow: hidden;
       isolation: isolate;
-      background-image: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url('../../images/why.png');
+      background-image: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url('../../images/team1.jpg');
       background-size: cover;
       background-position: center;
       clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
@@ -1079,101 +1076,12 @@
     }
 
     @media(max-width:640px) {
-      .year-tabs {
-        justify-content: flex-start;
-      }
-      .who-section {
-        padding-bottom: 30px;
-      }
-      .timeline-section {
-        padding-bottom: 30px;
-      }
-      .join-cta {
-        padding: 40px 5%;
-      }
-      .why-section {
-        padding: 40px 0;
-        background-position: top center;
-      }
-
       .why-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 20px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        scroll-behavior: smooth;
-        align-items: stretch;
-      }
-      .why-grid::-webkit-scrollbar {
-        display: none;
-      }
-      .why-grid .why-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
 
       .who-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 20px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        scroll-behavior: smooth;
-        align-items: stretch;
-      }
-      .who-grid::-webkit-scrollbar {
-        display: none;
-      }
-      .who-grid .who-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-        display: flex;
-        flex-direction: column;
-      }
-      .who-grid .who-card ul {
-        padding-right: 5px;
-      }
-      .who-carousel-wrap, .why-carousel-wrap {
-        position: relative;
-      }
-      .who-nav-arrows, .why-nav-arrows {
-        position: absolute;
-        top: 50%;
-        left: -12px;
-        right: -12px;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: space-between;
-        pointer-events: none;
-        margin-top: 0;
-      }
-      .who-nav-arrows .carousel-nav, .why-nav-arrows .carousel-nav {
-        pointer-events: auto;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-        cursor: pointer;
-        transition: all 0.3s;
-        /* Blur background slightly so text underneath is obscured but visible */
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-      }
-      .who-nav-arrows .carousel-nav:hover, .why-nav-arrows .carousel-nav:hover {
-        background: var(--accent);
-        color: #0a0a0f;
-        border-color: var(--accent);
+        grid-template-columns: 1fr;
       }
 
       .join-btns {
@@ -1412,5 +1320,117 @@
   }
   .timeline-section {
     padding: 40px 0 !important;
+  }
+}
+
+/* === AGGRESSIVE MOBILE COMPRESSION === */
+@media (max-width: 1024px) {
+  body[data-page="about"] .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+  }
+  body[data-page="about"] .hide-on-mobile {
+    display: none;
+  }
+  body[data-page="about"] .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body[data-page="about"] .footer-brand p {
+    margin: 0;
+  }
+  body[data-page="about"] .footer-list a {
+    min-height: 24px;
+    font-size: 0.75rem;
+  }
+  body[data-page="about"] .footer-head {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  body[data-page="about"] .svc-card {
+    height: 120px;
+    min-height: 120px;
+    border-radius: 8px;
+  }
+  body[data-page="about"] .svc-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="about"] .svc-content {
+    padding: 12px;
+  }
+  body[data-page="about"] .flip-cards-grid {
+    gap: 10px;
+    padding: 0 4px;
+  }
+  body[data-page="about"] .flip-card {
+    height: auto;
+    border-radius: 8px;
+  }
+  body[data-page="about"] .flip-card-inner {
+    border-radius: 8px;
+  }
+  body[data-page="about"] .flip-face-img {
+    height: 60px;
+  }
+  body[data-page="about"] .flip-face-img .face-overlay {
+    padding: 6px 10px;
+  }
+  body[data-page="about"] .flip-face-img .face-num {
+    font-size: 0.6rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="about"] .flip-face-img .face-title {
+    font-size: 0.95rem;
+  }
+  body[data-page="about"] .flip-front-icon {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+  }
+  body[data-page="about"] .flip-face-text {
+    padding: 10px 10px 12px;
+    border-radius: 0 0 8px 8px;
+  }
+  body[data-page="about"] .flip-face-text p {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  body[data-page="about"] .flip-face-text .face-link {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    min-height: 32px;
+    margin: 0;
+  }
+  body[data-page="about"] section:not([class*="-hero"]):not(.hero) {
+    padding: 30px 0;
+  }
+  body[data-page="about"] .sec-heading {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    line-height: 1.1;
+  }
+  body[data-page="about"] .sec-sub {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  body[data-page="about"] .sec-body {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  body[data-page="about"] .about-list {
+    gap: 8px;
+    margin: 12px 0 16px;
+  }
+  body[data-page="about"] .about-list li {
+    font-size: 0.8rem;
+    gap: 8px;
   }
 }
