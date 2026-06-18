@@ -740,7 +740,7 @@
     .form-close-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ============================================================
-   HR CONTACT STRIP  — below positions layout
+   HR CONTACT STRIP  ï¿½ below positions layout
    ============================================================ */
     .hr-contact-strip {
       margin-top: 56px;
@@ -1084,7 +1084,7 @@
 
 
 /* ============================================================
-   HERO MOBILE FIX — Full Mobile Responsiveness
+   HERO MOBILE FIX ï¿½ Full Mobile Responsiveness
    ============================================================ */
 
 /* Prevent horizontal overflow globally */
@@ -1161,7 +1161,7 @@ body[data-page="career"] {
   }
 }
 
-/* Medium mobile (481px–640px) */
+/* Medium mobile (481pxï¿½640px) */
 @media (min-width: 481px) and (max-width: 640px) {
   .career-hero {
     padding: 150px 24px 10px !important;
@@ -1202,7 +1202,7 @@ body[data-page="career"] {
   }
 }
 
-/* Tablet (641px–960px) — already handled by existing styles */
+/* Tablet (641pxï¿½960px) ï¿½ already handled by existing styles */
 @media (min-width: 641px) and (max-width: 960px) {
   .hero-h1 {
     font-size: clamp(3rem, 7vw, 5rem) !important;
@@ -1275,5 +1275,156 @@ body[data-page="career"] {
   }
   .pos-menu-list {
     padding: 0 16px 16px !important;
+  }
+}
+
+/* === MOBILE CARD VIEW FOR POSITIONS === */
+@media (max-width: 640px) {
+  /* Convert layout to stacked card view */
+  .positions-layout {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    border-radius: 12px !important;
+    overflow: visible !important;
+  }
+  
+  /* Hide the traditional menu panel border */
+  .pos-menu {
+    border: none !important;
+    border-bottom: none !important;
+    background: transparent !important;
+    padding: 16px 0 !important;
+  }
+  
+  /* Style the menu title to be a section header */
+  .pos-menu-title {
+    display: block !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: var(--muted) !important;
+    padding: 0 16px 12px !important;
+    border: none !important;
+    margin-bottom: 8px !important;
+    opacity: 0.7 !important;
+  }
+  
+  /* Style filter tabs */
+  .pos-filter-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 0 16px 16px !important;
+    border: none !important;
+  }
+  
+  .pos-filter-tab {
+    flex: 0 1 auto !important;
+    font-size: 0.7rem !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+  }
+  
+  /* Convert menu list to vertical card layout */
+  .pos-menu-list {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+    padding: 0 16px !important;
+    gap: 10px !important;
+    scroll-snap-type: none !important;
+  }
+  
+  /* Hide group labels */
+  .pos-menu-group-label {
+    display: none !important;
+  }
+  
+  /* Style menu items as cards */
+  .pos-menu-item {
+    background: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-right: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    padding: 14px 16px !important;
+    white-space: normal !important;
+    flex-shrink: 1 !important;
+    cursor: pointer !important;
+    transition: all 0.25s !important;
+    position: relative !important;
+  }
+  
+  .pos-menu-item:hover {
+    background: var(--card2) !important;
+    border-color: var(--accent) !important;
+  }
+  
+  .pos-menu-item.active {
+    background: rgba(168, 232, 50, 0.12) !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+  
+  .pos-menu-item.active::before {
+    display: none !important;
+  }
+  
+  /* Adjust badge positioning */
+  .pos-menu-badge {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+  }
+  
+  /* Panel styling */
+  .pos-panel {
+    background: transparent !important;
+    border: none !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    margin-top: 20px !important;
+  }
+  
+  .pos-detail {
+    background: transparent !important;
+    padding: 0 16px !important;
+    display: none !important;
+  }
+  
+  .pos-detail.active {
+    display: block !important;
+  }
+  
+  .pos-eyebrow {
+    font-size: 0.7rem !important;
+  }
+  
+  .pos-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pos-menu-title {
+    padding: 0 12px 12px !important;
+  }
+  
+  .pos-filter-tabs {
+    padding: 0 12px 16px !important;
+  }
+  
+  .pos-menu-list {
+    padding: 0 12px !important;
+  }
+  
+  .pos-menu-item {
+    padding: 12px 14px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .pos-detail {
+    padding: 0 12px !important;
   }
 }
