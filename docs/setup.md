@@ -52,7 +52,7 @@ Expected:
 
 ### Greeting
 ```bash
-curl -X POST http://localhost:3001/chat \
+curl -X POST http://127.0.0.1:3001/chat \
   -H "Content-Type: application/json" \
   -d '{"messages":[{"role":"user","content":"hi"}]}'
 ```
@@ -64,14 +64,14 @@ Expected:
 
 ### In-scope question
 ```bash
-curl -X POST http://localhost:3001/chat \
+curl -X POST http://127.0.0.1:3001/chat \
   -H "Content-Type: application/json" \
   -d '{"messages":[{"role":"user","content":"What services does Flashlab Creative offer?"}]}'
 ```
 
 ### Out-of-scope question
 ```bash
-curl -X POST http://localhost:3001/chat \
+curl -X POST http://127.0.0.1:3001/chat \
   -H "Content-Type: application/json" \
   -d '{"messages":[{"role":"user","content":"What is the weather in Tokyo?"}]}'
 ```

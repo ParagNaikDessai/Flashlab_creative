@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+﻿﻿from __future__ import annotations
 
 import os
 import random
@@ -114,5 +114,3 @@ class RAGChatService:
         retrieved_chunks = filtered[:3]
         prompt = build_prompt(question=question, retrieved_chunks=retrieved_chunks)
         return self.llm.generate(prompt=prompt, temperature=temperature, max_tokens=max_tokens)
-
-

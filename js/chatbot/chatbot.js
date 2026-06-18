@@ -35,7 +35,6 @@
   let isOpen = false;
   let isTyping = false;
   let bubbleIndex = 0;
-  let conversation = [];
 
   let chatbox, messagesArea, chatInput, sendBtn;
   let robotBtn, thinkingBubble, bubbleText;
@@ -59,7 +58,17 @@
 
   // -------------------- Networking (UI -> Python) --------------------
   function getConversationHistory() {
-    return conversation;
+    const nodes = messagesArea ? Array.from(messagesArea.querySelectorAll('.cb-msg')) : [];
+    const out = [];
+    for (const n of nodes) {
+      const bubble = n.querySelector('.cb-msg-bubble');
+      if (!bubble) continue;
+      const text = (bubble.innerText || '').trim();
+      if (!text) continue;
+      const isBot = n.classList.contains('bot');
+      out.push({ role: isBot ? 'assistant' : 'user', content: text });
+    }
+    return out;
   }
 
   async function sendToPython(userMessage) {
@@ -232,7 +241,6 @@
 
   function appendMessage(text, role) {
     const isBot = role === 'bot';
-    conversation.push({ role: isBot ? 'assistant' : 'user', content: text });
 
     const msgDiv = document.createElement('div');
     msgDiv.className = `cb-msg ${isBot ? 'bot' : 'user'}`;
@@ -340,7 +348,6 @@
         el.remove();
       }
     });
-    conversation = [];
   }
 
   function handleChipClick(e) {
