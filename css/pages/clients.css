@@ -26,7 +26,7 @@
       align-items: center;
       gap: 8px;
       border: 1.5px solid var(--accent);
-      color: var(--accent);
+      color: var(--accent) !important;
       padding: 12px 24px;
       border-radius: 999px;
       font-weight: 500;
@@ -35,8 +35,8 @@
     }
 
     .btn-ghost:hover {
-      background: var(--accent);
-      color: #0a0a0f;
+      background: var(--accent) !important;
+      color: #0a0a0f !important;
     }
 
     .page-hero {
@@ -236,7 +236,7 @@
 
     /* -- LOGOS -- */
     .logos-section {
-      padding: 70px 0;
+      padding: 70px 0 20px;
     }
 
     [data-theme="dark"] .logos-section {
@@ -812,7 +812,7 @@
 
     /* -- SOCIAL FEED -- */
     .feed-section {
-      padding: 70px 0;
+      padding: 0 0 70px;
     }
 
     .feed-grid {
