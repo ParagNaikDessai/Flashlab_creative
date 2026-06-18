@@ -39,7 +39,7 @@ The sole chatbot endpoint. Accepts a conversation and returns a RAG-grounded rep
     {"role": "user", "content": "What services do you offer?"}
   ],
   "maxTokens": 600,
-  "temperature": 0.4,
+  "temperature": 0.4, 
   "session_id": "optional-string"
 }
 ```

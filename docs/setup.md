@@ -12,7 +12,6 @@ Run from the **project root**:
 ```bash
 pip install -r backend/requirements.txt
 ```
-
 ## Environment variables
 
 Copy `env.example` to `.env` in the project root (or set variables directly in your hosting environment). **Never put API keys inside the `js/` folder** — that directory is publicly served.
