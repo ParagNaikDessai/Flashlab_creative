@@ -883,8 +883,15 @@
       const wrap = document.getElementById('loadMoreLogosWrap');
       if(btn && grid) {
         btn.addEventListener('click', function() {
-          grid.classList.remove('collapsed');
-          wrap.style.display = 'none';
+          if (grid.classList.contains('collapsed')) {
+            grid.classList.remove('collapsed');
+            btn.textContent = 'Show Less';
+          } else {
+            grid.classList.add('collapsed');
+            btn.textContent = 'Load More';
+            const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
         });
       }
     });
