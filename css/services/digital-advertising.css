@@ -1,4 +1,4 @@
-﻿    /* ═══════════════════════════════════
+    /* ═══════════════════════════════════
        PAGE HERO
     ═══════════════════════════════════ */
     .page-hero {
@@ -246,6 +246,9 @@
     }
 
     @media (max-width: 560px) {
+      .overview-img-main {
+        height: 260px;
+      }
       .img-badge {
         width: 80px;
         height: 80px;
@@ -334,13 +337,30 @@
 
     @media (max-width: 900px) {
       .design-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        background: transparent;
+        padding-bottom: 12px;
+      }
+      .design-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .design-card {
+        flex: 0 0 45%;
+        scroll-snap-align: center;
+        border-radius: 8px;
+        border: 1px solid var(--border);
       }
     }
 
-    @media (max-width: 480px) {
-      .design-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .design-card {
+        flex: 0 0 85%;
       }
     }
 
@@ -532,7 +552,11 @@
     /* ─── MOBILE NAV RESPONSIVE ─── */
     @media (max-width: 768px) {
       .page-hero {
-        padding-top: 155px;
+        padding-top: 155px !important;
+        padding-bottom: 24px;
+      }
+      .section {
+        padding: 48px 0;
       }
     }
 

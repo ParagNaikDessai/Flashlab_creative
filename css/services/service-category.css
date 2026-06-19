@@ -307,13 +307,30 @@
 
 @media (max-width: 900px) {
   .design-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    background: transparent;
+    padding-bottom: 12px;
+  }
+  .design-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .design-card {
+    flex: 0 0 45%;
+    scroll-snap-align: center;
+    border-radius: 8px;
+    border: 1px solid var(--border);
   }
 }
 
-@media (max-width: 480px) {
-  .design-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .design-card {
+    flex: 0 0 85%;
   }
 }
 
@@ -497,7 +514,22 @@
 
 @media (max-width: 768px) {
   .why-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    background: transparent;
+    padding-bottom: 12px;
+  }
+  .why-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .why-block {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
   }
 }
 
@@ -539,7 +571,34 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .page-hero {
-    padding-top: 155px;
+    padding-top: 155px !important;
+    padding-bottom: 24px !important;
+  }
+  .section {
+    padding: 16px 0;
+  }
+  [style*="margin-bottom:48px"],
+  [style*="margin-bottom: 48px"] {
+    margin-bottom: 12px !important;
+  }
+  .btn-primary {
+    padding: 12px 20px;
+    font-size: 0.8rem;
+  }
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    line-height: 1.1;
+  }
+  .page-hero-sub {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+  .overview-content {
+    text-align: center;
+    padding: 0 10px;
+  }
+  .overview-content .sec-eyebrow {
+    justify-content: center;
   }
 }
 
@@ -601,7 +660,7 @@
     padding: 0 10px !important;
   }
   .contact-band .btn-dark {
-    width: 100% !important;
-    justify-content: center !important;
+    width: auto !important;
+    padding: 14px 32px !important;
   }
 }
