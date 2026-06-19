@@ -376,7 +376,11 @@ window.addEventListener('scroll', () => {
   if (!track || !dotsEl) return;
   const N = TESTIMONIALS.length;
   const CLONE_COUNT = 4;
-  const CARD_W = 280, GAP = 20, STEP = CARD_W + GAP;
+  const GAP = 20;
+  function getStep() {
+    const c = track.firstElementChild;
+    return c ? c.offsetWidth + GAP : 300;
+  }
   function makeCard(t) {
     const card = document.createElement('a');
     card.className = 'testi-card';
@@ -410,7 +414,7 @@ window.addEventListener('scroll', () => {
   }
   function jumpTo(idx) {
     track.style.transition = 'none';
-    track.style.transform = 'translateX(-' + (idx * STEP) + 'px)';
+    track.style.transform = 'translateX(-' + (idx * getStep()) + 'px)';
     current = idx;
     track.offsetHeight;
     track.style.transition = '';
@@ -419,7 +423,7 @@ window.addEventListener('scroll', () => {
     if (busy) return;
     busy = true;
     current = idx;
-    track.style.transform = 'translateX(-' + (idx * STEP) + 'px)';
+    track.style.transform = 'translateX(-' + (idx * getStep()) + 'px)';
     updateDots(idx);
     track.addEventListener('transitionend', function onEnd() {
       track.removeEventListener('transitionend', onEnd);

@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   gap: 0;
-  z-index: 9999;
+  z-index: 99999;
   background: radial-gradient(120% 80% at 50% -10%, #14180c 0%, #0e1109 38%, #080a07 100%);
   transition: opacity .7s ease, visibility .7s ease;
 }

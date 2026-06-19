@@ -798,8 +798,30 @@
 @media (max-width: 1024px) {
   .svc-grid-bottom { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 560px) {
-  .svc-grid-bottom { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+  .svc-grid-bottom { 
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+  }
+  .svc-grid-bottom::-webkit-scrollbar { display: none; }
+  .svc-grid-bottom .svc-card { 
+    flex: 0 0 85%; 
+    scroll-snap-align: center; 
+  }
+  .svc-card .svc-desc {
+    color: rgba(255,255,255,0.72);
+    transform: translateY(0);
+    display: none; /* Hide desc to save space, but show Explore */
+  }
+  .svc-card .svc-explore {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .svc-card {
   position: relative;
@@ -2376,10 +2398,18 @@
         justify-content: center;
       }
       .founder-quote-section {
-        flex-direction: column;
-        gap: 20px;
-        padding: 40px 5%;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px !important;
+        padding: 40px 5% 60px !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
       }
+      .founder-quote-section::-webkit-scrollbar { display: none; }
+      .fq-vdivider { display: none; }
       .founder-quote { padding: 36px 28px; }
       .founder-quote blockquote { font-size: 1rem; }
       .made-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -2395,18 +2425,18 @@
       .section { padding: 35px 0; }
       .about-section { padding-top: 25px; }
       .services-section { padding: 30px 0 35px; }
-      .stats-section { padding: 40px 5%; }
+      .stats-section { padding: 20px 5% 30px; }
       .clients-section { padding-top: 35px; }
       .made-it { padding: 35px 0 25px; }
       .testi-section { padding: 40px 0 45px; }
       .cta-section { padding: 30px 5%; }
       .outstanding-section { padding: 40px 5% 30px; margin-top: 20px; }
       .outstanding-inner { gap: 24px; }
-      .sec-header.centered { margin-bottom: 24px; }
+      .sec-header.centered { margin-bottom: 16px !important; }
       .services-intro { gap: 16px; margin-bottom: 24px; }
       .nav-links { display: none !important; }
       .hamburger { display: flex; }
-      .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; row-gap: 24px; }
       .hero-stats { flex-wrap: wrap; gap: 16px; justify-content: center; }
       .hstat-divider { display: none; }
       .hstat { width: 40%; }
@@ -3226,6 +3256,7 @@
   }
   .testi-carousel-outer {
     padding: 0 16px;
+    margin-top: 15px !important;
   }
   .testi-nav-btn {
     width: 44px !important;
@@ -3389,18 +3420,18 @@
 
   /* 2. Service Cards */
   .svc-card {
-    height: 120px !important;
-    min-height: 120px !important;
+    height: 220px !important;
+    min-height: 220px !important;
     border-radius: 8px !important;
   }
 
   .svc-card h3 {
-    font-size: 0.95rem !important;
-    margin-bottom: 2px !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 6px !important;
   }
 
   .svc-content {
-    padding: 12px !important;
+    padding: 18px !important;
   }
 
   /* 4. Founder Cards */
@@ -3445,9 +3476,11 @@
 
   /* 5. Founder Quotes */
   .founder-quote {
-    padding: 12px !important;
-    flex: 0 0 94% !important;
-    border-radius: 8px !important;
+    padding: 20px !important;
+    flex: 0 0 88% !important;
+    width: 88% !important;
+    border-radius: 12px !important;
+    scroll-snap-align: center;
   }
 
   .founder-quote blockquote {
