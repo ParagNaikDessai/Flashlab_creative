@@ -1492,3 +1492,9 @@
     margin-bottom: 20px;
   }
 }
+
+.load-more-wrap {
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+}

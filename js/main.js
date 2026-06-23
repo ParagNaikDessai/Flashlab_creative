@@ -359,41 +359,91 @@ document.querySelectorAll('a[href^="#"]').forEach(link =>
     counters.forEach(c => io.observe(c));
 })();
 
-/* FILTER TABS */
+/* FILTER TABS & SHOW MORE/LESS pagination */
 (function ()
 {
     const btns  = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('#worksGrid .wcard');
-    if (!btns.length) return;
-    btns.forEach(btn =>
-    {
-        btn.addEventListener('click', () =>
-        {
-            btns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            cards.forEach((card, i) =>
-            {
-                const cats = (card.dataset.cats || '').split(',');
-                const show = filter === 'all' || cats.includes(filter);
-                if (show)
-                {
+    const showMoreWrap = document.getElementById('portShowMoreWrap');
+    const showMoreBtn = document.getElementById('portShowMoreBtn');
+    
+    if (!btns.length || !cards.length) return;
+    
+    let expanded = false;
+    
+    function updateWorksGrid(animate = true) {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        if (!activeBtn) return;
+        const filter = activeBtn.dataset.filter;
+        
+        let matchingIndex = 0;
+        cards.forEach(card => {
+            const cats = (card.dataset.cats || '').split(',');
+            const isMatch = filter === 'all' || cats.includes(filter);
+            
+            if (isMatch) {
+                const shouldDisplay = expanded || matchingIndex < 4;
+                if (shouldDisplay) {
                     card.style.display = '';
-                    const inner = card.querySelector('.work-card');
-                    if (inner)
-                    {
-                        inner.style.animation = 'none';
-                        inner.offsetHeight;
-                        inner.style.animation = `cardReveal .5s cubic-bezier(.22,1,.36,1) ${i * 0.06}s both`;
+                    if (animate) {
+                        const inner = card.querySelector('.work-card');
+                        if (inner) {
+                            inner.style.animation = 'none';
+                            inner.offsetHeight; // trigger reflow
+                            inner.style.animation = `cardReveal .5s cubic-bezier(.22,1,.36,1) ${matchingIndex * 0.06}s both`;
+                        }
                     }
-                }
-                else
-                {
+                } else {
                     card.style.display = 'none';
                 }
-            });
+                matchingIndex++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        if (showMoreWrap && showMoreBtn) {
+            if (matchingIndex > 4) {
+                showMoreWrap.style.display = '';
+                if (expanded) {
+                    showMoreBtn.innerHTML = 'Show Less <i class="ri-arrow-up-s-line"></i>';
+                } else {
+                    showMoreBtn.innerHTML = 'Show More <i class="ri-arrow-down-s-line"></i>';
+                }
+            } else {
+                showMoreWrap.style.display = 'none';
+            }
+        }
+    }
+    
+    // Initial load
+    updateWorksGrid(false);
+    
+    // Filter click handlers
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            expanded = false; // Reset expand state on filter switch
+            updateWorksGrid(true);
         });
     });
+    
+    // Show More/Less toggle handler
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            updateWorksGrid(false); // No need to re-trigger reveal stagger animation
+            
+            if (!expanded) {
+                const grid = document.getElementById('worksGrid');
+                if (grid) {
+                    const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }
+        });
+    }
 })();
 
 /* STAGGER CARDS */
