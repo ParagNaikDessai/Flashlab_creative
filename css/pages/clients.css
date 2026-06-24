@@ -1070,3 +1070,10 @@
     padding-top: 30px !important;
   }
 }
+
+/* Force uppercase on all main headings */
+.hero-full-heading,
+.sec-heading,
+.graphic-header-left h2 {
+  text-transform: uppercase !important;
+}

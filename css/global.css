@@ -15,6 +15,7 @@
   --noise-op: 0;
 
   --green:      #a8e832;
+  --orange:     #F56D43;
   --dark:       #0a0a0f;
   --white:      #ffffff;
   --navy:       #11222a;
@@ -684,6 +685,9 @@ li, blockquote, input, textarea { cursor: text; }
   .page-hero {
     padding-top: 145px;
   }
+  .page-hero h1 {
+    font-size: clamp(2.4rem, 9vw, 5rem) !important;
+  }
 }
 
 /* -- Mobile (480px) -- */
@@ -711,6 +715,9 @@ li, blockquote, input, textarea { cursor: text; }
 
   .page-hero {
     padding-top: 130px;
+  }
+  .page-hero h1 {
+    font-size: clamp(2rem, 11vw, 3.2rem) !important;
   }
 }
 

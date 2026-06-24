@@ -1596,3 +1596,12 @@ body[data-page="career"] {
     padding: 0 12px !important;
   }
 }
+
+/* Force uppercase on all main headings */
+.hero-h1,
+.sec-heading,
+.faq-intro h2,
+.no-role-title {
+  text-transform: uppercase !important;
+}
+

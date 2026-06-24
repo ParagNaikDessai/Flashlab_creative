@@ -178,7 +178,7 @@
     <div class="wrap">
       <div class="overview-split">
         <div class="overview-img-wrap reveal">
-          <img class="overview-img-main" src="../../images/ecom1.jpeg" alt="E-Commerce Solutions"
+          <img class="overview-img-main" src="../../images/ecom1.png" alt="E-Commerce Solutions"
                onerror="this.style.background='#1a1a2e'; this.style.minHeight='300px'; this.removeAttribute('src');">
           <div class="img-badge">
             <strong>10+</strong>
@@ -206,51 +206,60 @@
 
       <div class="billboard-showcase reveal" style="transition-delay:.12s">
         <div class="showcase-banner">
-          <img src="../../images/ecom-banner.jpeg" alt="E-Commerce Campaign &mdash; Banner"
+          <img src="../../images/ecom-banner.png" alt="E-Commerce Campaign &mdash; Banner"
                onerror="this.style.background='#1a1a2e'; this.style.minHeight='300px'; this.removeAttribute('src');"
             style="width:100%; height:220px; object-fit:cover; border-radius:4px;">
         </div>
         <div class="showcase-grid">
-          <img src="../../images/ecom2.jpeg" alt="E-Commerce &mdash; Product Store"
+          <img src="../../images/ecom2.png" alt="E-Commerce &mdash; Product Store"
                onerror="this.style.background='#1a1a2e'; this.style.minHeight='300px'; this.removeAttribute('src');"
             style="height:340px; object-fit:cover; border-radius:4px;">
-          <img src="../../images/ecom3.jpeg" alt="E-Commerce &mdash; Online Shopping"
+          <img src="../../images/ecom3.png" alt="E-Commerce &mdash; Online Shopping"
                onerror="this.style.background='#1a1a2e'; this.style.minHeight='300px'; this.removeAttribute('src');"
             style="height:340px; object-fit:cover; border-radius:4px;">
         </div>
       </div>
 
-      <!-- E-Commerce service types -->
-      <div class="types-grid reveal" style="transition-delay:.16s">
-        <div class="type-card">
-          <div class="type-num">01</div>
-          <h4>Shopify Development</h4>
-          <p>Custom Shopify stores built for performance &mdash; from theme design and product setup to payment gateways, shipping rules, and app integrations tailored to your business model.</p>
+      <!-- E-Commerce service types slider -->
+      <div class="types-slider-wrap reveal" style="transition-delay:.16s">
+        <div class="types-slider-viewport">
+          <div class="types-grid" id="typesGrid">
+            <div class="type-card">
+              <div class="type-num">01</div>
+              <h4>Shopify Development</h4>
+              <p>Custom Shopify stores built for performance &mdash; from theme design and product setup to payment gateways, shipping rules, and app integrations tailored to your business model.</p>
+            </div>
+            <div class="type-card">
+              <div class="type-num">02</div>
+              <h4>WooCommerce Stores</h4>
+              <p>Powerful WordPress-based stores with full flexibility. We design, develop, and configure WooCommerce environments that scale with your catalogue and customer base.</p>
+            </div>
+            <div class="type-card">
+              <div class="type-num">03</div>
+              <h4>Product Photography</h4>
+              <p>In-house studio and on-location product photography that makes your inventory look irresistible &mdash; colour-accurate, high-resolution, and ready for any platform or marketplace.</p>
+            </div>
+            <div class="type-card">
+              <div class="type-num">04</div>
+              <h4>Marketplace Integration</h4>
+              <p>Expand your reach with seamless listings on Amazon, Flipkart, Meesho, and other marketplaces &mdash; synced inventory, optimised listings, and unified order management.</p>
+            </div>
+            <div class="type-card">
+              <div class="type-num">05</div>
+              <h4>Performance Marketing</h4>
+              <p>Meta Shopping Ads, Google Performance Max, and retargeting campaigns engineered to drive qualified traffic, reduce cart abandonment, and lower your cost-per-acquisition.</p>
+            </div>
+            <div class="type-card">
+              <div class="type-num">06</div>
+              <h4>E-Commerce SEO</h4>
+              <p>Category and product page optimisation, technical SEO audits, schema markup, and content strategies that rank your store on page one and drive sustainable organic revenue.</p>
+            </div>
+          </div>
         </div>
-        <div class="type-card">
-          <div class="type-num">02</div>
-          <h4>WooCommerce Stores</h4>
-          <p>Powerful WordPress-based stores with full flexibility. We design, develop, and configure WooCommerce environments that scale with your catalogue and customer base.</p>
-        </div>
-        <div class="type-card">
-          <div class="type-num">03</div>
-          <h4>Product Photography</h4>
-          <p>In-house studio and on-location product photography that makes your inventory look irresistible &mdash; colour-accurate, high-resolution, and ready for any platform or marketplace.</p>
-        </div>
-        <div class="type-card">
-          <div class="type-num">04</div>
-          <h4>Marketplace Integration</h4>
-          <p>Expand your reach with seamless listings on Amazon, Flipkart, Meesho, and other marketplaces &mdash; synced inventory, optimised listings, and unified order management.</p>
-        </div>
-        <div class="type-card">
-          <div class="type-num">05</div>
-          <h4>Performance Marketing</h4>
-          <p>Meta Shopping Ads, Google Performance Max, and retargeting campaigns engineered to drive qualified traffic, reduce cart abandonment, and lower your cost-per-acquisition.</p>
-        </div>
-        <div class="type-card">
-          <div class="type-num">06</div>
-          <h4>E-Commerce SEO</h4>
-          <p>Category and product page optimisation, technical SEO audits, schema markup, and content strategies that rank your store on page one and drive sustainable organic revenue.</p>
+        <div class="types-controls">
+          <button class="types-btn" id="typesPrev" aria-label="Previous"><i class="ri-arrow-left-line"></i></button>
+          <div class="types-dots" id="typesDots"></div>
+          <button class="types-btn" id="typesNext" aria-label="Next"><i class="ri-arrow-right-line"></i></button>
         </div>
       </div>
     </div>
@@ -525,11 +534,9 @@
     <i class="ri-arrow-up-line"></i>
   </button>
 
-  <!-- ------------------------------------------
-       SCRIPTS
-  ------------------------------------------ -->
   <script src="../../js/main.js"></script>
   <script src="../../js/pages/services.js"></script>
+  <script src="../../js/pages/ecommerce.js"></script>
 
 </body>
 

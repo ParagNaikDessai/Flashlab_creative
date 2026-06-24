@@ -296,6 +296,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .page-hero { padding-top: 155px; }
+      .page-hero h1 { font-size: clamp(2.4rem, 9vw, 5rem); }
 
       .coming-soon-section { padding: 70px 0 80px; }
 
@@ -306,6 +307,8 @@
     }
 
     @media (max-width: 480px) {
+      .page-hero h1 { font-size: clamp(2rem, 11vw, 3.2rem); }
       .cs-heading { font-size: 2rem; }
       .cs-badge { font-size: 0.62rem; letter-spacing: 2px; }
     }
+

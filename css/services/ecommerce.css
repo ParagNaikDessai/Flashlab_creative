@@ -1,4 +1,4 @@
-﻿    /* ══════════════════════════════════════════
+    /* ══════════════════════════════════════════
        SERVICE NAV STRIP
     ══════════════════════════════════════════ */
     .service-nav-strip {
@@ -317,27 +317,102 @@
     /* ══════════════════════════════════════════
        TYPES GRID — numbered service cards
     ══════════════════════════════════════════ */
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: var(--border);
+    /* ══════════════════════════════════════════
+       TYPES GRID & CAROUSEL
+       ══════════════════════════════════════════ */
+    .types-slider-wrap {
+      position: relative;
       margin-top: 48px;
+      width: 100%;
     }
 
-    @media (max-width: 700px) {
-      .types-grid {
-        grid-template-columns: 1fr;
-      }
+    .types-slider-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .types-grid {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 20px !important;
+      background: transparent !important;
+      margin-top: 0 !important;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
     }
 
     .type-card {
+      flex: 0 0 calc(50% - 10px); /* 2 columns on desktop */
+      box-sizing: border-box;
+      border: 1px solid var(--border);
+      border-radius: 8px;
       background: var(--card-bg);
       padding: 36px 32px;
       position: relative;
       overflow: hidden;
       transition: background .3s;
     }
+
+    @media (max-width: 900px) {
+      .type-card {
+        flex: 0 0 85%; /* Let the next card peek out */
+      }
+      .types-controls {
+        display: none !important;
+      }
+    }
+
+    .types-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .types-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text2);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .types-btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .types-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .types-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+
+    .types-dot.active {
+      background: var(--green);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+
 
     .type-card::after {
       content: '';
@@ -396,13 +471,30 @@
 
     @media (max-width: 900px) {
       .design-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        background: transparent;
+        padding-bottom: 12px;
+      }
+      .design-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .design-card {
+        flex: 0 0 45%;
+        scroll-snap-align: center;
+        border-radius: 8px;
+        border: 1px solid var(--border);
       }
     }
 
-    @media (max-width: 480px) {
-      .design-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .design-card {
+        flex: 0 0 85%;
       }
     }
 
@@ -469,15 +561,32 @@
       margin-top: 48px;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .why-grid {
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        background: transparent;
+        padding-bottom: 12px;
+        margin-top: 24px;
+      }
+      .why-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .why-card {
+        flex: 0 0 45%;
+        scroll-snap-align: center;
+        border-radius: 8px;
       }
     }
 
-    @media (max-width: 540px) {
-      .why-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .why-card {
+        flex: 0 0 85%;
       }
     }
 
